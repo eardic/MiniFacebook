@@ -1,0 +1,21 @@
+<h1>Listing Users</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Last Name</th>
+    <th>Mail</th>
+    <th>Gender</th>
+    <th>Birth Day</th>
+  </tr>
+
+  <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.last_name %></td>
+        <td><%= user.mail %></td>
+        <td><%= user.gender %></td>
+        <td><%= user.birth %></td>
+      </tr>
+  <% end %>
+</table>

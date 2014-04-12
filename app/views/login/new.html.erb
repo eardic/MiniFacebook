@@ -1,0 +1,48 @@
+<%= form_for @user, url: {action: "create"} do |f| %>
+    <% if @user.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@user.errors.count, "error") %> prohibited
+            this user from being saved:</h2>
+          <ul>
+            <% @user.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <p>
+      <%= f.label "Name" %><br>
+      <%= f.text_field :name %>
+    </p>
+
+    <p>
+      <%= f.label "Last Name" %><br>
+      <%= f.text_field :last_name %>
+    </p>
+
+    <p>
+      <%= f.label "Mail" %><br>
+      <%= f.email_field :mail %>
+    </p>
+
+    <p>
+      <%= f.label "Password" %><br>
+      <%= f.password_field :password %>
+    </p>
+
+    <p>
+      <%= f.label "Birth Date" %><br>
+      <%= f.date_field :birth%>
+    </p>
+
+    <p>
+      <%= f.label "Female " %>
+      <%= f.radio_button :gender, "Female", :checked => (:gender == "Female") %>
+      <%= f.label "Male" %>
+      <%= f.radio_button :gender, "Male", :checked => (:gender == "Male") %>
+    </p>
+
+    <p>
+      <%= f.submit "Register" %>
+    </p>
+<% end %>

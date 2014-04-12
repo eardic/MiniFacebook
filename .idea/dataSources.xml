@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2100363335">
+    <data-source source="LOCAL" name="Rails MiniFacebook: development" uuid="15b2dc1b-4a80-4b8e-9367-bf9e5e7e5230">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:D:\RubymineProjects\MiniFacebook\db\development.sqlite3</jdbc-url>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+
