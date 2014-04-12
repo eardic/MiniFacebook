@@ -1,21 +1,13 @@
-<h1>Listing Users</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Last Name</th>
-    <th>Mail</th>
-    <th>Gender</th>
-    <th>Birth Day</th>
-  </tr>
-
-  <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= user.mail %></td>
-        <td><%= user.gender %></td>
-        <td><%= user.birth %></td>
-      </tr>
+<%= stylesheet_link_tag "login" %>
+<h1>Facebook</h1>
+<h1>The Best Way to Socialize</h1>
+<h2>Sign in to continue to Facebook</h2>
+<div class="login">
+  <%= image_tag("avatar.png", :size => "128x128", :class => "profile_image") %>
+  <%= form_for :login, url: {action: "show"} do |f| %>
+      <%= f.email_field :mail, :placeholder => "Mail", :class => "input_field" %>
+      <%= f.password_field :password, :placeholder => "Password", :class => "input_field" %>
+      <%= button_tag "Login" %>
   <% end %>
-</table>
+</div>
+<%= link_to "Register", login_new_path, :style => "color: blue" %>
