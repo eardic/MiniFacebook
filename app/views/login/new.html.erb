@@ -1,48 +1,37 @@
-<%= form_for @user, url: {action: "create"} do |f| %>
-    <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited
-            this user from being saved:</h2>
-          <ul>
-            <% @user.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-    <p>
-      <%= f.label "Name" %><br>
-      <%= f.text_field :name %>
-    </p>
-
-    <p>
-      <%= f.label "Last Name" %><br>
-      <%= f.text_field :last_name %>
-    </p>
-
-    <p>
-      <%= f.label "Mail" %><br>
-      <%= f.email_field :mail %>
-    </p>
-
-    <p>
-      <%= f.label "Password" %><br>
-      <%= f.password_field :password %>
-    </p>
-
-    <p>
-      <%= f.label "Birth Date" %><br>
-      <%= f.date_field :birth%>
-    </p>
-
-    <p>
-      <%= f.label "Female " %>
-      <%= f.radio_button :gender, "Female", :checked => (:gender == "Female") %>
-      <%= f.label "Male" %>
-      <%= f.radio_button :gender, "Male", :checked => (:gender == "Male") %>
-    </p>
-
-    <p>
-      <%= f.submit "Register" %>
-    </p>
-<% end %>
+<h1>Let's Get In</h1>
+<div class="login register">
+  <%= form_for @user, url: {action: "create"} do |f| %>
+      <% if @user.errors.any? %>
+          <div class="sign_up_errors">
+            <ul>
+              <% @user.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+      <% end %>
+      <p>
+        <%= f.text_field :name, :class => "input_field", :placeholder => "Name" %>
+      </p>
+      <p>
+        <%= f.text_field :last_name, :class => "input_field", :placeholder => "Last Name" %>
+      </p>
+      <p>
+        <%= f.email_field :mail, :class => "input_field", :placeholder => "Mail" %>
+      </p>
+      <p>
+        <%= f.password_field :password, :class => "input_field", :placeholder => "Password" %>
+      </p>
+      <p>
+        <%= f.label "Birthdate" %>
+        <%= f.date_field :birth, :class => "input_field", :placeholder => "gg.aa.yyyy" %>
+      </p>
+      <p>
+        <%= f.select :gender, options_for_select(['Male', 'Female']), {:prompt => 'Select Gender'}, :class => "select_field" %>
+      </p>
+      <p>
+        <%= f.button "Register" %>
+      </p>
+  <% end %>
+</div>
+<%= link_to "Back to Login", login_index_path %>

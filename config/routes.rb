@@ -1,11 +1,12 @@
 MiniFacebook::Application.routes.draw do
+  get "facebook/home"
+  get "facebook/profile"
+  get "facebook/find_friends"
   get "login/new"
-  get "login/edit"
-  get "login/show"
-  put "login/update"
+  get "login/welcome"
+  post "login/login_try"
   post "login/create"
   get "login/index"
-  delete "login/destroy"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

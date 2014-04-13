@@ -4,10 +4,19 @@
 <h2>Sign in to continue to Facebook</h2>
 <div class="login">
   <%= image_tag("avatar.png", :size => "128x128", :class => "profile_image") %>
-  <%= form_for :login, url: {action: "show"} do |f| %>
-      <%= f.email_field :mail, :placeholder => "Mail", :class => "input_field" %>
-      <%= f.password_field :password, :placeholder => "Password", :class => "input_field" %>
+  <%= form_tag(:action => 'login_try') do %>
+      <%= email_field_tag :mail,nil, :placeholder => "E Mail", :class => "input_field" %>
+      <%= password_field_tag :password,nil, :placeholder => "Password", :class => "input_field" %>
       <%= button_tag "Login" %>
+  <% end %>
+  <% if flash[:color]== "valid" %>
+      <div class="valid_notice">
+        <p><%= flash[:notice] %></p>
+      </div>
+  <% elsif flash[:color]== "invalid" %>
+      <div class="invalid_notice">
+        <p><%= flash[:notice] %></p>
+      </div>
   <% end %>
 </div>
 <%= link_to "Register", login_new_path, :style => "color: blue" %>
