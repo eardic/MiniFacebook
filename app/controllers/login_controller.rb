@@ -8,16 +8,13 @@ class LoginController < ApplicationController
     @user = User.new
   end
 
-  # Welcome page
-  def welcome
-    @user
-  end
-
   # Registration method
   def create
     @user = User.new(user_params)
     if (@user.save)
-      render "welcome"
+      session[:user_id] = authorized_user.id
+      flash[:notice] = "Welcome, you logged in as #{authorized_user.name}"
+      redirect_to facebook_home_path
     else
       render "new"
     end
