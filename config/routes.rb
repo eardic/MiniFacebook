@@ -2,6 +2,7 @@ MiniFacebook::Application.routes.draw do
   get "facebook/home"
   get "facebook/profile"
   get "facebook/find_friends"
+  get "facebook/log_out"
   get "login/new"
   get "login/welcome"
   post "login/login_try"
