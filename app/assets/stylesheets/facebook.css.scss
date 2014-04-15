@@ -13,6 +13,7 @@ body {
   padding: 10px 15px;
 }
 
+.btn{ width: auto }
 .header {background-color:#ffffff;border-width:0;}
 .header .navbar-collapse {background-color:#ffffff;}
 .btn,.form-control,.panel,.list-group,.well {border-radius:1px;box-shadow:0 0 0;}
@@ -25,7 +26,6 @@ body {
 .btn-info,.label-info,.progress-bar-info{background-color:#a0c3ff;border-color:#a0c3ff;}
 .btn-danger,.label-danger,.progress-bar-danger{background-color:#dd4b39;}
 .btn-warning,.label-warning,.progress-bar-warning{background-color:#f4b400;color:#444444;}
-
 hr {border-color:#ececec;}
 button {
   outline: 0;
@@ -33,7 +33,6 @@ button {
 textarea {
   resize: none;
   outline: 0;
-
 }
 .panel .btn i,.btn span{
   color:#666666;
