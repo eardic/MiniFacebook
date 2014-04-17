@@ -2,7 +2,11 @@ class FacebookController < ApplicationController
   before_filter :authenticate_user, :except => [:home, :profile, :find_friends]
 
   def home
-    @user = User.find(session[:user_id])
+    if session[:user_id]
+      @user = User.find(session[:user_id])
+    else
+      redirect_to login_index_path
+    end
   end
 
   def profile
@@ -21,15 +25,6 @@ class FacebookController < ApplicationController
   end
 
   def delete_post
-  end
-
-  def get_friends
-    @user = User.find(session[:user_id])
-    friends = Array.new
-    @user.friends.each do |f|
-      friends << User.find(f.friend_id)
-    end
-    return friends
   end
 
   def log_out

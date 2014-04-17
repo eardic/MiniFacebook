@@ -25,11 +25,26 @@
           <h4><i class="glyphicon glyphicon-pushpin" style="color:#000000"></i>&nbsp;Basic</h4>
         </div>
         <div class="panel-body">
-          <div class="list-group">
-            <a href="" class="list-group-item">Request 1</a>
-            <a href="" class="list-group-item">Request 2</a>
-            <a href="" class="list-group-item">Request 3</a>
-          </div>
+          <% if @user %>
+              <table class="table">
+                <tr>
+                  <td>Name</td>
+                  <td><%= @user.name %>&nbsp;<%= @user.last_name %></td>
+                </tr>
+                <tr>
+                  <td>Mail</td>
+                  <td><%= @user.mail %></td>
+                </tr>
+                <tr>
+                  <td>Birth</td>
+                  <td><%= @user.birth %></td>
+                </tr>
+                <tr>
+                  <td>Gender</td>
+                  <td><%= @user.gender %></td>
+                </tr>
+              </table>
+          <% end %>
         </div>
       </div>
 
@@ -40,9 +55,13 @@
         </div>
         <div class="panel-body">
           <div class="list-group">
-            <a href="" class="list-group-item">Request 1</a>
-            <a href="" class="list-group-item">Request 2</a>
-            <a href="" class="list-group-item">Request 3</a>
+            <% if @user && !@user.jobs.empty? %>
+                <% @user.jobs.take(3).each do |j| %>
+                    <p class="list-group-item"><%= j.company %>(<%= j.title %>)</p>
+                <% end %>
+            <% else %>
+                <p class="notice">No Jobs</p>
+            <% end %>
           </div>
         </div>
       </div>
@@ -68,13 +87,16 @@
         </div>
         <div class="panel-body">
           <div class="list-group">
-            <a href="" class="list-group-item">Message 1</a>
-            <a href="" class="list-group-item">Message 2</a>
-            <a href="" class="list-group-item">Message 3</a>
+            <% if @user && !@user.friends.empty? %>
+                <% get_friends.take(3).each do |f| %>
+                    <a href="#" class="list-group-item"><%= f.name %>&nbsp;<%= f.last_name %></a>
+                <% end %>
+            <% else %>
+                <p class="notice">No Friends</p>
+            <% end %>
           </div>
         </div>
       </div>
-
 
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -82,8 +104,29 @@
           <h4><i class="glyphicon glyphicon-book" style="color:#dd0309"></i>&nbsp;Education</h4>
         </div>
         <div class="panel-body">
-          <div class="clearfix"></div>
-          More more more more...
+          <% if @user && @user.education %>
+              <table class="table">
+                <tr>
+                  <td>College</td>
+                  <td><%= @user.education.college %></td>
+                </tr>
+                <tr>
+                  <td>High School</td>
+                  <td><%= @user.education.high_school %></td>
+                </tr>
+              </table>
+          <% else %>
+              <table class="table">
+                <tr>
+                  <td>College</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>High School</td>
+                  <td></td>
+                </tr>
+              </table>
+          <% end %>
         </div>
       </div>
 
