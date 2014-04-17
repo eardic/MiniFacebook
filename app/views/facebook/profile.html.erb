@@ -11,7 +11,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="#" class="pull-right">Edit</a>
+          <a href="#editPhotoModal" role="button" data-toggle="modal" class="pull-right">Change</a>
           <h4>Photo</h4>
         </div>
         <div class="panel-body">
@@ -21,7 +21,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="#" class="pull-right">Edit</a>
+          <a href="#editBasicModal" role="button" data-toggle="modal" class="pull-right">Edit</a>
           <h4><i class="glyphicon glyphicon-pushpin" style="color:#000000"></i>&nbsp;Basic</h4>
         </div>
         <div class="panel-body">
@@ -50,7 +50,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="#" class="pull-right">View all</a>
+          <a href="#editJobModal" role="button" data-toggle="modal" class="pull-right">Edit</a>
           <h4><i class="glyphicon glyphicon-briefcase" style="color:#2262dd"></i>&nbsp;Job</h4>
         </div>
         <div class="panel-body">
@@ -82,7 +82,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="#" class="pull-right">Manage</a>
+          <a href="#editFriendsModal" role="button" data-toggle="modal" class="pull-right">Manage</a>
           <h4><i class="glyphicon glyphicon-user" style="color:#dd0309"></i>&nbsp;Friends</h4>
         </div>
         <div class="panel-body">
@@ -100,7 +100,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="#" class="pull-right">Edit</a>
+          <a href="#editEducationModal" role="button" data-toggle="modal" class="pull-right">Edit</a>
           <h4><i class="glyphicon glyphicon-book" style="color:#dd0309"></i>&nbsp;Education</h4>
         </div>
         <div class="panel-body">
@@ -132,7 +132,7 @@
 
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="#" class="pull-right">Edit</a>
+          <a href="#editContactModal" role="button" data-toggle="modal" class="pull-right">Edit</a>
           <h4><i class="glyphicon glyphicon-earphone" style="color:#2262dd"></i>&nbsp;Contact</h4>
         </div>
         <div class="panel-body">
@@ -167,9 +167,129 @@
           <% end %>
         </div>
       </div>
-
     </div>
-
   </div>
+</div>
 
+<!-- EDIT DIALOG -->
+<div id="editBasicModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Update Basic</h2>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12 text-center">
+          <%= form_for @user, url: {action: 'update_basic'} do |f| %>
+              <p>
+                <%= f.text_field :name, :class => "input_field", :placeholder => "Name" %>
+              </p>
+
+              <p>
+                <%= f.text_field :last_name, :class => "input_field", :placeholder => "Last Name" %>
+              </p>
+
+              <p>
+                <%= f.label "Birthdate" %>
+                <%= f.date_field :birth, :class => "input_field", :placeholder => "gg.aa.yyyy" %>
+              </p>
+
+              <p>
+                <%= f.select :gender, options_for_select(['Male', 'Female']), {:prompt => 'Select Gender'}, :class => "select_field" %>
+              </p>
+
+              <p>
+                <%= f.button "Save", :class => 'btn' %>
+              </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT DIALOG -->
+<div id="editJobModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Update Job</h2>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12 text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT DIALOG -->
+<div id="editContactModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Update Contact</h2>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12 text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT DIALOG -->
+<div id="editEducationModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Update Education</h2>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12 text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT DIALOG -->
+<div id="editFriendsModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Manage Friends</h2>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12 text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EDIT DIALOG -->
+<div id="editPhotoModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Change Photo</h2>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12 text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

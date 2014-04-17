@@ -38,9 +38,8 @@
           <% end %>
         </li>
         <li>
-          <%= link_to ({:action => :home}) do %>
-              <i class="glyphicon glyphicon-cog" style="color:#dd1111;"></i> Settings
-          <% end %>
+          <a href="#editSettingsModal" role="button" data-toggle="modal">
+            <i class="glyphicon glyphicon-cog" style="color:#dd1111;"></i> Settings</a>
         </li>
         <li>
           <a href="#aboutModal" role="button" data-toggle="modal">
@@ -66,7 +65,7 @@
       </div>
       <div class="modal-body">
         <div class="col-md-12 text-center">
-
+          <p class="notice">Emre Ardıç</p>
         </div>
       </div>
       <div class="modal-footer">
@@ -74,7 +73,23 @@
       </div>
     </div>
   </div>
-  1
+</div>
+
+<!-- Settings DIALOG -->
+<div id="editSettingsModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Change Settings</h2>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-12 text-center">
+
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 
