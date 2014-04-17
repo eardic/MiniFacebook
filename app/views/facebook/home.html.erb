@@ -1,16 +1,18 @@
-<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css" rel="stylesheet">
-<%= stylesheet_link_tag "facebook" %>
-
+<!-- HEADER -->
 <%= render partial: "header", locals: {user: @user} %>
 
-<!--main-->
+<!-- HOME -->
 <div class="container" id="main">
 
   <div class="row">
 
+    <!-- LEFT COLUMN -->
     <div class="col-md-3 col-sm-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Messages</h4></div>
+        <div class="panel-heading">
+          <a href="#" class="pull-right">View all</a>
+          <h4><i class="glyphicon glyphicon-inbox" style="color:#dd0309"></i>&nbsp;Messages</h4>
+        </div>
         <div class="panel-body">
           <div class="list-group">
             <a href="" class="list-group-item">Message 1</a>
@@ -21,10 +23,13 @@
       </div>
 
       <div class="panel panel-default">
-        <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>More Something</h4></div>
+        <div class="panel-heading">
+          <a href="#" class="pull-right">View all</a>
+          <h4><i class="glyphicon glyphicon-bell" style="color:#dd0309"></i>&nbsp;Notifications</h4>
+        </div>
         <div class="panel-body">
           <div class="clearfix"></div>
-           More more more more...
+          More more more more...
         </div>
       </div>
 
@@ -32,40 +37,18 @@
 
     <!-- MIDDLE COLUMN -->
     <div class="col-md-6 col-sm-6">
-      <div class="well">
-        <form class="form-horizontal">
-          <h4>What's New</h4>
 
-          <div class="form-group" style="padding:14px;">
-            <%= text_area_tag :post, nil, :placeholder => "What do you think?", :class => "form-control" %>
-          </div>
-          <%= button_tag "Post", :class => "btn btn-success", :type => "button" %>
-        </form>
-      </div>
-
-
-      <div class="panel panel-default">
-        <div class="panel-heading"><h4>Post</h4></div>
-        <div class="panel-body">
-          Post post post
-          <hr>
-          <form>
-            <div class="input-group">
-              <div class="input-group-btn">
-                <button class="btn btn-default">+1</button>
-                <button class="btn btn-default"><i class="glyphicon glyphicon-share"></i></button>
-              </div>
-              <input type="text" class="form-control" placeholder="Add a comment..">
-            </div>
-          </form>
-        </div>
-      </div>
+      <!-- All post of user will be shown -->
+      <%= render partial: "post", locals: {user: @user, is_home: true} %>
 
     </div>
 
     <div class="col-md-3 col-sm-6">
       <div class="panel panel-default">
-        <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Requests</h4></div>
+        <div class="panel-heading">
+          <a href="#" class="pull-right">View all</a>
+          <h4><i class="glyphicon glyphicon-retweet" style="color:#2262dd"></i>&nbsp;Requests</h4>
+        </div>
         <div class="panel-body">
           <div class="list-group">
             <a href="" class="list-group-item">Request 1</a>
@@ -76,7 +59,10 @@
       </div>
 
       <div class="panel panel-default">
-        <div class="panel-heading"><a href="#" class="pull-right">View all</a> <h4>Events</h4></div>
+        <div class="panel-heading">
+          <a href="#" class="pull-right">View all</a>
+          <h4><i class="glyphicon glyphicon-star-empty" style="color:#2262dd"></i>&nbsp;Events</h4>
+        </div>
         <div class="panel-body">
           <div class="list-group">
             <a href="http://bootply.com/tagged/bootstrap-3" class="list-group-item">Event 1</a>

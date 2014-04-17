@@ -3,9 +3,11 @@ class User < ActiveRecord::Base
   validates :name,:last_name, length: { minimum: 1 }
   validates :birth,:gender, presence: true
   validates :password, length: { in: 6..20 }
+
   has_many :messages, dependent: :destroy
-  has_many :post, dependent: :destroy
-  has_many :friend, dependent: :destroy
+  has_many :posts, dependent: :destroy
+  has_many :friends, dependent: :destroy
+
   has_one :job, dependent: :destroy
   has_one :educations, dependent: :destroy
   has_one :relationship, dependent: :destroy

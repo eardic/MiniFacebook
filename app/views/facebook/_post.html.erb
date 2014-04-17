@@ -1,0 +1,49 @@
+<!-- What's new box -->
+<div class="well">
+  <%= form_tag('post_text', remote: true, class: 'form-horizontal', authenticity_token: true) do %>
+      <h4>What's New</h4>
+
+      <div class="form-group" style="padding:14px;">
+        <%= text_area_tag :post, nil, :placeholder => "What do you think?", :class => "form-control" %>
+      </div>
+      <%= button_tag "Post", :class => "btn btn-success" %>
+  <% end %>
+</div>
+
+
+<% unless is_home %>
+    <% users = user.posts.all %>
+<% else %>
+    <% users = user.posts.last(1) %>
+<% end %>
+
+<!-- Show users posts -->
+<!-- If home page, then show last post of user(in home page) -->
+<!-- Else show all posts of user(in profile page) -->
+<% users.reverse_each do |p| %>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= button_tag "×", :class => 'close', :style => 'width:12px;margin-top:5px' %>
+        <h4><%= user.name %> <%= user.last_name %></h4>
+      </div>
+      <div class="panel-body">
+        <%= p.post %>
+        <hr>
+        <form>
+          <div class="input-group">
+            <div class="input-group-btn">
+              <%= button_tag "+1", :class => 'btn btn-default' %>
+              <%= button_tag "", :class => 'btn btn-default' do %>
+                  <i class='glyphicon glyphicon-share'></i>
+              <% end %>
+            </div>
+            <input type="text" class="form-control" placeholder="Add a comment..">
+          </div>
+        </form>
+      </div>
+    </div>
+<% end %>
+
+<!-- Show friends post if home page is active -->
+
+

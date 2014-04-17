@@ -11,3 +11,11 @@
  *= require_self
  *= require_tree .
  */
+.profile_image{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
