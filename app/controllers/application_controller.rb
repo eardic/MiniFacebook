@@ -9,8 +9,6 @@ class ApplicationController < ActionController::Base
       redirect_to login_index_path
       return false
     else
-      # set current_user by the current user object
-      @current_user = User.find session[:user_id]
       return true
     end
   end
@@ -24,4 +22,5 @@ class ApplicationController < ActionController::Base
       return true
     end
   end
+
 end

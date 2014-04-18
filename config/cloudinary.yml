@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dhagqhwaz
+  api_key: '547355225137228'
+  api_secret: ZRHmTARh0yHMly00NII-fft2hsw
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dhagqhwaz
+  api_key: '547355225137228'
+  api_secret: ZRHmTARh0yHMly00NII-fft2hsw
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dhagqhwaz
+  api_key: '547355225137228'
+  api_secret: ZRHmTARh0yHMly00NII-fft2hsw
+  enhance_image_tag: true
+  static_image_support: false

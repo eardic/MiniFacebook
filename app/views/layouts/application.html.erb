@@ -3,10 +3,11 @@
 <head>
   <title>MiniFacebook</title>
   <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= stylesheet_link_tag 'http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css', media: "all" %>
-  <%= javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" %>
-  <%= javascript_include_tag "http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  <%= cloudinary_js_config %>
+  <%= stylesheet_link_tag 'http://netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css' %>
+  <%= javascript_include_tag "http://netdna.bootstrapcdn.com/bootstrap/3.0.2/js/bootstrap.min.js" %>
 </head>
 <body>
 <%= yield %>
