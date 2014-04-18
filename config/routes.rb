@@ -7,7 +7,7 @@ MiniFacebook::Application.routes.draw do
   patch "profile/update_basic"
   patch "profile/update_contact"
   patch "profile/update_jobs"
-  patch "profile/upload_photo"
+  post "profile/upload_photo"
   get "login/new"
   post "login/login_try"
   post "login/create"

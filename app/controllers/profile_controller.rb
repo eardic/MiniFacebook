@@ -29,11 +29,15 @@ class ProfileController < ApplicationController
 
   def upload_photo
     if params[:image_id].present?
-      preloaded = Cloudinary::Uploader.upload(params[:image])
-      raise "Invalid upload signature" if !preloaded.valid?
+      preloaded = Cloudinary::PreloadedFile.new(params[:image_id])
+      puts "Invalid upload signature" if !preloaded.valid?
       @user = User.find(session[:user_id])
       @user.img_id = preloaded.identifier
-      puts "HeLLOOOOOOOOOOOOOOO"
+      if @user.save
+        puts "HeLLOOOOOOOOOOOOOOO"
+      else
+        puts "NOOOOOOOOO"
+      end
     end
     puts "AQQQQQQQQQQQQ"
     redirect_to facebook_profile_path
