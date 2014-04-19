@@ -14,16 +14,16 @@
     <div class="collapse navbar-collapse" id="navbar-collapse1">
 
       <!-- Search form-->
-      <form class="navbar-form navbar-left">
-        <div class="input-group" style="max-width:470px;margin-top: 5px;margin-left: 20px">
-          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
-
-          <div class="input-group-btn">
-            <button class="btn btn-default btn-primary" type="submit"><i class="glyphicon glyphicon-search"></i>
-            </button>
+      <%= form_tag('find_friends', :class => 'navbar-form navbar-left', :method => 'get') do %>
+          <div class="input-group" style="max-width:470px;margin-top: 5px;margin-left: 20px">
+            <%= text_field_tag :src_term, nil, :placeholder => "Search", :class => "form-control" %>
+            <div class="input-group-btn">
+              <%= button_tag :class => "btn btn-default btn-primary" do %>
+                  <i class="glyphicon glyphicon-search"></i>
+              <% end %>
+            </div>
           </div>
-        </div>
-      </form>
+      <% end %>
 
       <!-- Navigation buttons -->
       <ul class="nav navbar-nav navbar-right">

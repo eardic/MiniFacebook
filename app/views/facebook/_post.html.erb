@@ -2,6 +2,7 @@
 <div class="well">
   <%= form_tag('post_text', class: 'form-horizontal', authenticity_token: true) do %>
       <h4>What's New</h4>
+
       <div class="form-group" style="padding:14px;">
         <%= text_area_tag :post, nil, :placeholder => "What do you think?", :class => "form-control" %>
       </div>
@@ -11,18 +12,19 @@
 
 
 <% unless is_home %>
-    <% users = user.posts.all %>
+    <% posts = user.posts.all %>
 <% else %>
-    <% users = user.posts.last(1) %>
+    <% posts = user.posts.last(1) %>
 <% end %>
 
 <!-- Show users posts -->
 <!-- If home page, then show last post of user(in home page) -->
 <!-- Else show all posts of user(in profile page) -->
-<% users.reverse_each do |p| %>
+<% posts.reverse_each do |p| %>
     <div class="panel panel-default">
       <div class="panel-heading">
-        <%= button_tag "×", :class => 'close', :style => 'width:12px;margin-top:5px' %>
+        <%= link_to "×", facebook_delete_post_path(:post_id => p.id), :class => 'close',
+                    :style => 'width:12px;margin-top:5px;font-size:16px', :method => 'delete' %>
         <h4><%= user.name %> <%= user.last_name %></h4>
       </div>
       <div class="panel-body">

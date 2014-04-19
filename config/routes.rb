@@ -3,11 +3,17 @@ MiniFacebook::Application.routes.draw do
   get "facebook/profile"
   get "facebook/find_friends"
   get "facebook/log_out"
+  get "facebook/friend_profile"
+  delete "facebook/delete_post"
+  post "facebook/add_friend"
   post "facebook/post_text"
+
   patch "profile/update_basic"
   patch "profile/update_contact"
   patch "profile/update_jobs"
   post "profile/upload_photo"
+  delete "profile/delete_friend"
+
   get "login/new"
   post "login/login_try"
   post "login/create"

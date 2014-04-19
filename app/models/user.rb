@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include Gravtastic
-  gravtastic :mail,:size => 160
+  gravtastic :mail, :size => 160
 
   validates :mail, presence: true, uniqueness: true
   validates :name, :last_name, length: {minimum: 1}
@@ -29,6 +29,14 @@ class User < ActiveRecord::Base
       end
     end
     return friends
+  end
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE :src or last_name LIKE :src or mail LIKE :src', {:src => "%#{search}%"}])
+    else
+      find(:all)
+    end
   end
 
 end

@@ -1,2 +1,22 @@
-<h1>Facebook#find_friends</h1>
-<p>Find me in app/views/facebook/find_friends.html.erb</p>
+<!-- HEADER -->
+<%= render partial: "header", locals: {user: @user} %>
+
+<!-- HOME -->
+<div class="container" id="main">
+
+  <div class="row">
+
+    <%= render partial: "left", locals: {user: @user} %>
+
+    <!-- MIDDLE COLUMN -->
+    <div class="col-md-6 col-sm-6">
+
+      <%= render partial: "search", locals: {friends: @friends} %>
+
+    </div>
+
+    <%= render partial: "right", locals: {user: @user} %>
+
+  </div>
+
+</div>

@@ -43,6 +43,19 @@ class ProfileController < ApplicationController
     redirect_to facebook_profile_path
   end
 
+  def delete_friend
+    if params[:friend_ids]
+      selected_ids = params[:friend_ids]
+      if selected_ids
+        @user = User.find(session[:user_id])
+        selected_ids.each do |id|
+          @user.friends.find_by_friend_id(id).destroy
+        end
+      end
+    end
+    redirect_to facebook_profile_path
+  end
+
   private
   def user_params
     params.require(:user).permit(:name, :last_name, :birth, :gender, :avatar)

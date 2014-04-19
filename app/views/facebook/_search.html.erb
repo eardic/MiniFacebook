@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4><i class="glyphicon glyphicon-search" style="color:#dd0309"></i>&nbsp;All Results</h4>
+  </div>
+  <div class="panel-body">
+    <% friends.each do |f| %>
+        <div class="row">
+          <div class="col-sm-2 src-res-img">
+            <% if f.img_id %>
+                <%= cl_image_tag f.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+            <% else %>
+                <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
+            <% end %>
+          </div>
+          <div class="col-sm-4 src-res-group">
+            <div class="text-info">
+              <%= link_to "#{f.name} #{f.last_name}", facebook_friend_profile_path(:friend_id => f.id), :class => 'src-res-name' %>
+            </div>
+            <div class="text-info src-res-info"><%= f.mail %></div>
+            <div class="text-info src-res-info"><%= f.contact.city if f.contact %></div>
+          </div>
+          <div class="col-sm-3 pull-right">
+            <%= button_to "Add Friend", {:action => 'add_friend', :id => f.id}, :class => 'btn btn-default' %>
+          </div>
+        </div>
+        <hr>
+    <% end %>
+  </div>
+</div>
+

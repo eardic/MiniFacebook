@@ -1,0 +1,9 @@
+<!-- HEADER, Includes css,js libs  -->
+<%= render partial: "header", locals: {user: @user} %>
+
+<!-- HOME -->
+<div class="container" id="main">
+
+  <%= render partial: "profile", locals: {user: @friend, is_user: false} %>
+
+</div>
