@@ -59,10 +59,8 @@
       </div>
       <div class="panel-body">
         <div class="list-group">
-          <% if user && !user.jobs.empty? %>
-              <% user.jobs.take(3).each do |j| %>
-                  <p class="list-group-item"><%= j.company %>(<%= j.title %>)</p>
-              <% end %>
+          <% if user && user.job %>
+              <p class="list-group-item"><%= user.job.company %>(<%= user.job.title %>)</p>
           <% else %>
               <p class="notice">No Jobs</p>
           <% end %>

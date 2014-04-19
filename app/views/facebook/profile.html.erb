@@ -56,32 +56,43 @@
       </div>
       <div class="modal-body">
         <div class="col-md-12 text-center">
-          <%= form_for @user, url: {action: 'update_jobs', controller: 'profile'}, :remote => 'true' do |f| %>
-              <% if !@user.jobs.empty? %>
-                  <%= f.fields_for :jobs do |c| %>
-                      <p>
-                        <%= c.text_field :company, :class => "input_field", :placeholder => "Company" %>
-                      </p>
-
-                      <p>
-                        <%= c.text_field :title, :class => "input_field", :placeholder => "Title" %>
-                      </p>
-
-                      <p>
-                        <%= f.label "Begin Date" %>
-                        <%= f.date_field :begin_date, :class => "input_field", :placeholder => "gg.aa.yyyy" %>
-                      </p>
-
-                      <p>
-                        <%= f.label "End Date" %>
-                        <%= f.date_field :end_date, :class => "input_field", :placeholder => "gg.aa.yyyy" %>
-                      </p>
-                  <% end %>
+          <% if @user.job %>
+              <%= form_tag(url_for(action: 'update_job', controller: 'profile'), :method => :patch) do %>
                   <p>
-                    <%= f.button "Save", :class => 'btn' %>
+                    <%= text_field_tag :company, nil, :placeholder => "Company", :class => 'form-control' %>
                   </p>
-              <% else %>
 
+                  <p>
+                    <%= text_field_tag :title, nil, :placeholder => "Title", :class => 'form-control' %>
+                  </p>
+
+                  <p>
+                    <%= date_field_tag :begin, nil, :class => 'form-control' %>
+                  </p>
+
+                  <p>
+                    <%= date_field_tag :end, nil, :class => 'form-control' %>
+                  </p>
+                  <%= button_tag "Update", :class => 'btn' %>
+              <% end %>
+          <% else %>
+              <%= form_tag(url_for(action: 'add_job', controller: 'profile'), :method => :post) do %>
+                  <p>
+                    <%= text_field_tag :company, nil, :placeholder => "Company", :class => 'form-control' %>
+                  </p>
+
+                  <p>
+                    <%= text_field_tag :title, nil, :placeholder => "Title", :class => 'form-control' %>
+                  </p>
+
+                  <p>
+                    <%= date_field_tag :begin, nil, :class => 'form-control' %>
+                  </p>
+
+                  <p>
+                    <%= date_field_tag :end, nil, :class => 'form-control' %>
+                  </p>
+                  <%= button_tag "Add", :class => 'btn' %>
               <% end %>
           <% end %>
         </div>
@@ -100,27 +111,44 @@
       </div>
       <div class="modal-body">
         <div class="col-md-12 text-center">
-          <%= form_for @user, url: {action: 'update_contact', controller: 'profile'} do |f| %>
-              <%= f.fields_for :contact do |c| %>
+          <% if @user.contact %>
+              <%= form_tag(url_for(action: 'update_contact', controller: 'profile'), :method => :patch) do %>
                   <p>
-                    <%= c.telephone_field :tel, :class => "input_field" %>
+                    <%= phone_field_tag :tel, nil, :placeholder => "Phone Number", :class => 'form-control' %>
                   </p>
 
                   <p>
-                    <%= c.text_field :city, :class => "input_field", :placeholder => "City" %>
+                    <%= text_field_tag :city, nil, :placeholder => "City", :class => 'form-control' %>
                   </p>
 
                   <p>
-                    <%= c.text_field :country, :class => "input_field", :placeholder => "Country" %>
+                    <%= text_field_tag :country, nil, :placeholder => "Country", :class => 'form-control' %>
                   </p>
 
                   <p>
-                    <%= c.text_field :address, :class => "input_field", :placeholder => "Address" %>
+                    <%= text_field_tag :address, nil, :placeholder => "Address", :class => 'form-control' %>
                   </p>
+                  <%= button_tag "Update", :class => 'btn' %>
               <% end %>
-              <p>
-                <%= f.button "Save", :class => 'btn' %>
-              </p>
+          <% else %>
+              <%= form_tag(url_for(action: 'add_contact', controller: 'profile'), :method => :post) do %>
+                  <p>
+                    <%= phone_field_tag :tel, nil, :placeholder => "Phone Number", :class => 'form-control' %>
+                  </p>
+
+                  <p>
+                    <%= text_field_tag :city, nil, :placeholder => "City", :class => 'form-control' %>
+                  </p>
+
+                  <p>
+                    <%= text_field_tag :country, nil, :placeholder => "Country", :class => 'form-control' %>
+                  </p>
+
+                  <p>
+                    <%= text_field_tag :address, nil, :placeholder => "Address", :class => 'form-control' %>
+                  </p>
+                  <%= button_tag "Add", :class => 'btn' %>
+              <% end %>
           <% end %>
         </div>
       </div>
@@ -134,11 +162,33 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
-        <h2 class="text-center">Update Education</h2>
+        <h2 class="text-center">Education</h2>
       </div>
       <div class="modal-body">
         <div class="col-md-12 text-center">
+          <% if @user.education %>
+              <%= form_tag(url_for(action: 'update_education', controller: 'profile'), :method => :patch) do %>
+                  <p>
+                    <%= text_field_tag :high_school, nil, :placeholder => "High School", :class => 'form-control' %>
+                  </p>
 
+                  <p>
+                    <%= text_field_tag :college, nil, :placeholder => "College", :class => 'form-control' %>
+                  </p>
+                  <%= button_tag "Update", :class => 'btn' %>
+              <% end %>
+          <% else %>
+              <%= form_tag(url_for(action: 'add_education', controller: 'profile'), :method => :post) do %>
+                  <p>
+                    <%= text_field_tag :high_school, nil, :placeholder => "High School", :class => 'form-control' %>
+                  </p>
+
+                  <p>
+                    <%= text_field_tag :college, nil, :placeholder => "College", :class => 'form-control' %>
+                  </p>
+                  <%= button_tag "Add", :class => 'btn' %>
+              <% end %>
+          <% end %>
         </div>
       </div>
     </div>
@@ -155,7 +205,6 @@
       </div>
       <div class="modal-body">
         <div class="col-md-12 text-center">
-
           <% if @user && !@user.friends.empty? %>
               <%= form_tag(url_for(action: 'delete_friend', controller: 'profile'), :method => :delete) do %>
                   <table class="table">

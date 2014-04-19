@@ -10,7 +10,11 @@ MiniFacebook::Application.routes.draw do
 
   patch "profile/update_basic"
   patch "profile/update_contact"
-  patch "profile/update_jobs"
+  post "profile/add_contact"
+  patch "profile/update_job"
+  post "profile/add_job"
+  patch "profile/update_education"
+  post "profile/add_education"
   post "profile/upload_photo"
   delete "profile/delete_friend"
 
