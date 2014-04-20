@@ -84,7 +84,14 @@ class FacebookController < ApplicationController
   end
 
   def add_comment
-
+    p_id = params[:post_id]
+    comment = params[:comment]
+    if p_id && comment
+      @user = User.find(session[:user_id])
+      @post = Post.find(p_id)
+      @user.comments.create(post_id: p_id, text: comment)
+    end
+    render 'add_comment.js'
   end
 
   def remove_comment

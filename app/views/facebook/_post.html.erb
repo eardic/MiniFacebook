@@ -44,8 +44,12 @@
         </div>
       </div>
       <div class="panel-footer">
+
+        <div style="overflow-y: scroll;max-height: 200px;overflow-x: hidden" id="comments_div_<%= p.id %>">
+          <%= render partial: "comment", locals: {post: p} %>
+        </div>
         <div class="input-group-btn">
-          <%= form_tag('add_comment', :method => 'post') do %>
+          <%= form_tag(facebook_add_comment_path(:post_id => p.id), :method => 'post', :remote => true) do %>
               <%= text_field_tag :comment, nil, :placeholder => "Add Comment...", :class => 'form-control' %>
           <% end %>
         </div>

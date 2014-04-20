@@ -8,16 +8,17 @@ class User < ActiveRecord::Base
   validates :password, length: {in: 6..20}
 
   has_many :messages, dependent: :destroy
-  has_many :posts, dependent: :destroy
   has_many :friends, dependent: :destroy
+  has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
 
   has_one :job, dependent: :destroy
   has_one :education, dependent: :destroy
   has_one :relationship, dependent: :destroy
   has_one :contact, dependent: :destroy
 
-  accepts_nested_attributes_for :education, :relationship, :contact,
-                                :messages, :posts, :friends, :job, allow_destroy: true
+  #accepts_nested_attributes_for :education, :relationship, :contact,
+   #                             :messages, :posts, :friends, :job, allow_destroy: true
 
   # @param [Object] id
   def self.get_friends(id)

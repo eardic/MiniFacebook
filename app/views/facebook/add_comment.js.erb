@@ -1,0 +1,1 @@
+$("#comments_div_<%= @post.id %>").html("<%= j render(:partial => 'comment', :locals => { :post => @post }) %>");
