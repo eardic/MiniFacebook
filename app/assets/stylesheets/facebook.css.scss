@@ -7,22 +7,44 @@ body {
   font: normal 14px Roboto, arial, sans-serif;
 }
 
+.post_button{
+  float: left;
+  margin-right: 10px;
+}
+.post_panel{
+  padding-bottom: 5px;
+}
+
+#post_user_name {
+  font-size: 14px;
+  margin-top: 0px;
+  float: left;
+}
+
+#post_elapsed_time {
+  font-size: 12px;
+  font-weight: normal;
+  color: #999999;
+}
+
 .src-res-img {
   padding-right: 0px;
 }
 
-.src-res-group{
+.src-res-group {
   padding-left: 0px;
 }
 
 .src-res-name {
-  font-size: large;
+  font-size: 15px;
   margin-top: 0px;
   float: left;
 }
 
 .src-res-info {
   font-size: small;
+  margin-bottom: 0px;
+  clear: both;
 }
 
 .navbar-default {
@@ -136,6 +158,7 @@ textarea {
 
 .panel .panel-heading {
   background-color: #ffffff;
+  padding-bottom: 5px;
   font-weight: 700;
   font-size: 16px;
   color: #262626;

@@ -1,0 +1,3 @@
+$("#like_<%= @post.id %>").html("<%= @post.like if @post.like != 0 %>");
+$("#dislike_<%= @post.id %>").html("<%= @post.dislike if @post.dislike != 0 %>");
+

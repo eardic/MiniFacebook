@@ -1,4 +1,5 @@
 MiniFacebook::Application.routes.draw do
+
   get "facebook/home"
   get "facebook/profile"
   get "facebook/find_friends"
@@ -7,6 +8,11 @@ MiniFacebook::Application.routes.draw do
   delete "facebook/delete_post"
   post "facebook/add_friend"
   post "facebook/post_text"
+  post "facebook/like_post"
+  post "facebook/dislike_post"
+  post "facebook/add_comment"
+  post "facebook/share_post"
+  delete "facebook/delete_comment"
 
   patch "profile/update_basic"
   patch "profile/update_contact"

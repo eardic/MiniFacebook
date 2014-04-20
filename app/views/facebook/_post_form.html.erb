@@ -1,0 +1,12 @@
+<!-- What's new box -->
+<div class="well">
+  <%= form_tag('post_text', remote: true, class: 'form-horizontal', authenticity_token: true) do %>
+      <h4>What's New</h4>
+
+      <div class="form-group" style="padding:14px;">
+        <%= text_area_tag :post, nil, :placeholder => "What do you think?", :class => "form-control" %>
+      </div>
+      <%= hidden_field_tag :is_home, is_home %>
+      <%= button_tag "Post", :class => "btn btn-success" %>
+  <% end %>
+</div>

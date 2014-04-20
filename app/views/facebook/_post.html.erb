@@ -1,17 +1,4 @@
-<!-- What's new box -->
-<div class="well">
-  <%= form_tag('post_text', class: 'form-horizontal', authenticity_token: true) do %>
-      <h4>What's New</h4>
-
-      <div class="form-group" style="padding:14px;">
-        <%= text_area_tag :post, nil, :placeholder => "What do you think?", :class => "form-control" %>
-      </div>
-      <%= button_tag "Post", :class => "btn btn-success" %>
-  <% end %>
-</div>
-
-
-<% unless is_home %>
+<% if is_home == false %>
     <% posts = user.posts.all %>
 <% else %>
     <% posts = user.posts.last(1) %>
@@ -21,30 +8,55 @@
 <!-- If home page, then show last post of user(in home page) -->
 <!-- Else show all posts of user(in profile page) -->
 <% posts.reverse_each do |p| %>
-    <div class="panel panel-default">
+    <div class="panel panel-default" id="post_div_<%= p.id %>">
       <div class="panel-heading">
-        <%= link_to "×", facebook_delete_post_path(:post_id => p.id), :class => 'close',
-                    :style => 'width:12px;margin-top:5px;font-size:16px', :method => 'delete' %>
-        <h4><%= user.name %> <%= user.last_name %></h4>
-      </div>
-      <div class="panel-body">
-        <%= p.post %>
-        <hr>
-        <form>
-          <div class="input-group">
-            <div class="input-group-btn">
-              <%= button_tag "+1", :class => 'btn btn-default' %>
-              <%= button_tag "", :class => 'btn btn-default' do %>
-                  <i class='glyphicon glyphicon-share'></i>
-              <% end %>
-            </div>
-            <input type="text" class="form-control" placeholder="Add a comment..">
+        <%= link_to "×", facebook_delete_post_path(:post_id => p.id), :remote => true, :class => 'close',
+                    :style => 'width:12px;margin-top:5px;font-size:16px', :method => 'delete', :id => "post_delete_btn_#{p.id}" %>
+        <div class="row" style="margin-top: 5px">
+          <div class="col-sm-1">
+            <% if user.img_id %>
+                <%= cl_image_tag user.img_id, :width => 40, :height => 40, :class => 'center-block' %>
+            <% else %>
+                <%= image_tag('avatar.png', size: '40x40', class: 'center-block') %>
+            <% end %>
           </div>
-        </form>
+          <div class="col-sm-3">
+            <%= link_to "#{user.name} #{user.last_name}", facebook_profile_path, :id => 'post_user_name' %>
+            <br>
+            <p id="post_elapsed_time"><%= time_ago_in_words(p.created_at) %> ago</p>
+          </div>
+        </div>
+      </div>
+      <div class="panel-body post_panel">
+        <%= p.post %>
+        <div class="input-group-btn">
+          <%= link_to facebook_like_post_path(:post_id => p.id), remote: true, :method => 'post', :class => 'post_button' do %>
+              <span style="font-size: 12px" id="like_<%= p.id %>"><%= p.like if p.like && p.like > 0 %></span>
+              <i class='glyphicon glyphicon-thumbs-up'></i>
+          <% end %>
+          <%= link_to facebook_dislike_post_path(:post_id => p.id), remote: true, :method => 'post', :class => 'post_button' do %>
+              <span style="font-size: 12px" id="dislike_<%= p.id %>"><%= p.dislike if p.dislike && p.dislike < 0 %></span>
+              <i class='glyphicon glyphicon-thumbs-down'></i>
+          <% end %>
+          <%= link_to facebook_share_post_path(:post_id => p.id), :method => 'post', :class => 'post_button' do %>
+              <i class='glyphicon glyphicon-share'></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="panel-footer">
+        <div class="input-group-btn">
+          <%= form_tag('add_comment', :method => 'post') do %>
+              <%= text_field_tag :comment, nil, :placeholder => "Add Comment...", :class => 'form-control' %>
+          <% end %>
+        </div>
       </div>
     </div>
 <% end %>
 
 <!-- Show friends post if home page is active -->
+<% if is_home %>
+
+<% end %>
+
 
 

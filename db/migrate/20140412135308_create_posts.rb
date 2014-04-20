@@ -3,6 +3,8 @@ class CreatePosts < ActiveRecord::Migration
     create_table :posts do |t|
       t.belongs_to :user
       t.text :post
+      t.integer :like
+      t.integer :dislike
 
       t.timestamps
     end

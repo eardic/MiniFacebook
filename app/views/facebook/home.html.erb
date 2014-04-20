@@ -11,8 +11,11 @@
     <!-- MIDDLE COLUMN -->
     <div class="col-md-6 col-sm-6">
 
+      <%= render partial: "post_form", locals: {is_home: true} %>
       <!-- All post of user will be shown -->
-      <%= render partial: "post", locals: {user: @user, is_home: true} %>
+      <div id="post_container">
+        <%= render partial: "post", locals: {user: @user, is_home: true} %>
+      </div>
 
     </div>
 
