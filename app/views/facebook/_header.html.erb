@@ -4,7 +4,11 @@
   <div class="col-md-12">
     <!-- Facelook Header -->
     <div class="navbar-header">
-      <%= link_to "Facelook", facebook_home_path, :class => "navbar-brand" %>
+
+    <!--  <%= link_to "Facelook", facebook_home_path, :class => "navbar-brand" %> -->
+      <!-- adding logo to the header -->
+     <%= link_to image_tag("../images/facelook_logo.png", :border => 0, :alt => '', :title => ''), facebook_home_path, :class => 'navbar-brand' %>
+
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
         <i class="glyphicon glyphicon-search"></i>
       </button>
@@ -66,6 +70,7 @@
       <div class="modal-body">
         <div class="col-md-12 text-center">
           <p class="notice">Emre Ardıç</p>
+          <p class="notice">Azat UĞURLU</p>
         </div>
       </div>
       <div class="modal-footer">

@@ -4,13 +4,13 @@
     <data-source source="LOCAL" name="Rails MiniFacebook: development" uuid="15b2dc1b-4a80-4b8e-9367-bf9e5e7e5230">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\RubymineProjects\MiniFacebook\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\azat\RubymineProjects\MiniFacebook\db\development.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails MiniFacebook: test" uuid="bd5d1043-a212-4839-9b1a-63cb182cbf71">
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\RubymineProjects\MiniFacebook\db\test.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\azat\RubymineProjects\MiniFacebook\db\test.sqlite3</jdbc-url>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails MiniFacebook: production" uuid="59ae0372-2547-4b38-9792-223b3334a104">
