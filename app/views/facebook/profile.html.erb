@@ -5,8 +5,12 @@
 <div class="container" id="main">
 
   <%= render partial: "profile", locals: {user: @user, is_user: true} %>
+  <!--FOOTER-->
+  <%= render partial: "footer" %>
 
 </div>
+
+
 
 <!-- EDIT DIALOG -->
 <div id="editBasicModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
@@ -252,7 +256,5 @@
 
 
 
-<!--FOOTER-->
-  <%= render partial: "footer", locals: {user: @user} %>
 
 

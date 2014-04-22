@@ -1,4 +1,6 @@
-<h1 style="margin-top: 100px">Let's Get In</h1>
+<%= image_tag("facelook_logo.png", :border => 0, :size => '300x75', :class => 'login_logo') %>
+
+<h1>Let's Get In</h1>
 <div class="login register">
   <%= form_for @user, url: {action: "create"} do |f| %>
       <% if @user.errors.any? %>
