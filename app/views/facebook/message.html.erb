@@ -1,0 +1,52 @@
+<!-- HEADER -->
+<%= render partial: "header", locals: {user: @user} %>
+
+<!-- HOME -->
+<div class="container" id="main">
+
+  <div class="row">
+
+    <!-- THE PANEL FOR NAMES OF FRIENDS -->
+    <div class="col-md-3 col-md-offset-1">
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><i class="glyphicon glyphicon-inbox" style="color:#dd0309"></i>&nbsp;Inbox</h4>
+        </div>
+        <div class="panel-body">
+          <p class="text-center">Friends</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- MESSAGES PANEL FOR SELECTED FRIEND -->
+    <div class="col-md-7">
+
+      <!-- All messages of selected friend will be shown -->
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4><i class="glyphicon glyphicon-send" style="color:#dd0309"></i>&nbsp;Messages</h4>
+        </div>
+        <div class="panel-body">
+         <p class="text-center">Messages</p>
+        </div>
+        <div class="panel-footer">
+          <div class="input-group-btn">
+            <%= form_tag(facebook_send_message_path, :method => 'post', :remote => true) do %>
+                <%= text_field_tag :message, nil, :placeholder => "Send Message...", :class => 'form-control' %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!--FOOTER-->
+    <%= render partial: "footer" %>
+
+  </div>
+</div>
+
+
+

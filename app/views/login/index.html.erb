@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "login" %>
-  <%= link_to image_tag("facelook_logo.png", :border => 0, :size => '300x75', :alt => '', :title => ''), facebook_home_path, :class => 'login_logo' %>
+<%= link_to image_tag("facelook_logo.png", :border => 0, :size => '300x75', :alt => '', :title => ''), facebook_home_path, :class => 'login_logo' %>
 
 
 <h1>The Best Way to Socialize</h1>
@@ -7,8 +7,8 @@
 <div class="login">
   <%= image_tag("avatar.png", :size => "128x128", :class => "profile_image") %>
   <%= form_tag(:action => 'login_try') do %>
-      <%= email_field_tag :mail,nil, :placeholder => "E Mail", :class => "input_field" %>
-      <%= password_field_tag :password,nil, :placeholder => "Password", :class => "input_field" %>
+      <%= email_field_tag :mail, nil, :placeholder => "E Mail", :class => "input_field" %>
+      <%= password_field_tag :password, nil, :placeholder => "Password", :class => "input_field" %>
       <%= button_tag "Login" %>
   <% end %>
   <% if flash[:color]== "valid" %>
