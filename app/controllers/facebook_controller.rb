@@ -77,7 +77,6 @@ class FacebookController < ApplicationController
       if posts.empty?
         text = Post.find(p_id).post
         @user.posts.create(post: text)
-        puts "emre"
       end
     end
     render 'profile'
@@ -94,8 +93,12 @@ class FacebookController < ApplicationController
     render 'add_comment.js'
   end
 
-  def remove_comment
-
+  def delete_comment
+    if params[:comment_id]
+      @comment = Comment.find(params[:comment_id])
+      @comment.destroy
+    end
+    render 'delete_comment.js'
   end
 
   def delete_post

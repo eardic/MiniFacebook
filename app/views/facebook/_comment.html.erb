@@ -1,7 +1,7 @@
 <% if !post.comments.empty? %>
     <% post.comments.each do |c| %>
-        <div class="row" style="margin-top: 5px">
-          <div class="col-sm-1">
+        <div class="row" style="margin-top: 5px" id="comment_id_<%= c.id %>">
+          <div class="col-sm-1" style="margin-top: 3px">
             <% member = get_user(c.user_id) %>
             <% if member.img_id %>
                 <%= cl_image_tag member.img_id, :width => 32, :height => 32, :class => 'center-block' %>
@@ -9,9 +9,11 @@
                 <%= image_tag('avatar.png', size: '32x32', class: 'center-block') %>
             <% end %>
           </div>
-          <div class="col-md-11">
+          <div class="col-md-11" style="padding-left: 5px">
+            <%= link_to "×", facebook_delete_comment_path(:comment_id => c.id), :remote => true, :class => 'close',
+                        :style => 'width:12px;margin:0px;font-size:16px;font-weight:normal', :method => 'delete' %>
             <%= link_to "#{member.name} #{member.last_name}", facebook_friend_profile_path(:friend_id => member.id), :id => 'post_user_name' %>
-            <p id="post_elapsed_time" style="margin-top: 2px">&nbsp;<%= time_ago_in_words(c.created_at) %> ago</p>
+            <p id="post_elapsed_time" style="margin-top: 2px;margin-bottom: 5px">&nbsp;<%= time_ago_in_words(c.created_at) %> ago</p>
             <p style="overflow-wrap: break-word;font-size: 12px"><%= c.text %></p>
           </div>
         </div>
