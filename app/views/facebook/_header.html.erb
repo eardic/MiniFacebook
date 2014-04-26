@@ -5,9 +5,8 @@
     <!-- Facelook Header -->
     <div class="navbar-header">
 
-    <!--  <%= link_to "Facelook", facebook_home_path, :class => "navbar-brand" %> -->
       <!-- adding logo to the header -->
-     <%= link_to image_tag("https://dl.dropboxusercontent.com/u/106945564/facelook/logo2.png", :border => 0, :alt => 'Facelook', :title => 'Logo', :size => '200x50'), facebook_home_path, :class => 'navbar-brand' %>
+     <%= link_to image_tag("logo2.png", :border => 0, :alt => 'Facelook', :title => 'Logo', :size => '200x50'), facebook_home_path, :class => 'navbar-brand' %>
 
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1">
         <i class="glyphicon glyphicon-search"></i>
@@ -19,7 +18,7 @@
 
       <!-- Search form-->
       <%= form_tag('find_friends', :class => 'navbar-form navbar-left', :method => 'get') do %>
-          <div class="input-group" style="max-width:470px;margin-top: 5px;margin-left: 20px">
+          <div class="input-group" style="max-width:470px;margin-top: 10px">
             <%= text_field_tag :src_term, nil, :placeholder => "Search", :class => "form-control" %>
             <div class="input-group-btn">
               <%= button_tag :class => "btn btn-default btn-primary" do %>

@@ -10,8 +10,6 @@
 
 </div>
 
-
-
 <!-- EDIT DIALOG -->
 <div id="editBasicModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
@@ -71,10 +69,12 @@
                   </p>
 
                   <p>
+                    <%= label_tag "Begin Date" %>
                     <%= date_field_tag :begin, nil, :class => 'form-control' %>
                   </p>
 
                   <p>
+                    <%= label_tag "End Date" %>
                     <%= date_field_tag :end, nil, :class => 'form-control' %>
                   </p>
                   <%= button_tag "Update", :class => 'btn' %>
@@ -244,7 +244,7 @@
       </div>
       <div class="modal-body">
         <div class="col-md-12 text-center">
-          <%= form_tag({:action => 'upload_photo', :controller => 'profile'}, :method => :post) do %>
+          <%= form_tag({:action => 'upload_photo', :controller => 'profile'}, :method => :post, :style => 'display:flex') do %>
               <%= cl_image_upload_tag(:image_id) %>
               <%= submit_tag "Save" %>
           <% end %>

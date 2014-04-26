@@ -30,19 +30,19 @@
         <% if user %>
             <table class="table">
               <tr>
-                <td>Name</td>
+                <td class="info_head">Name</td>
                 <td><%= user.name %>&nbsp;<%= user.last_name %></td>
               </tr>
               <tr>
-                <td>Mail</td>
+                <td class="info_head">Mail</td>
                 <td><%= user.mail %></td>
               </tr>
               <tr>
-                <td>Birth</td>
+                <td class="info_head">Birth</td>
                 <td><%= user.birth %></td>
               </tr>
               <tr>
-                <td>Gender</td>
+                <td class="info_head">Gender</td>
                 <td><%= user.gender %></td>
               </tr>
             </table>
@@ -60,7 +60,24 @@
       <div class="panel-body">
         <div class="list-group">
           <% if user && user.job %>
-              <p class="list-group-item"><%= user.job.company %>(<%= user.job.title %>)</p>
+              <table class="table">
+                <tr>
+                  <td class="info_head">Company</td>
+                  <td><%= user.job.company %></td>
+                </tr>
+                <tr>
+                  <td class="info_head">Title</td>
+                  <td><%= user.job.title %></td>
+                </tr>
+                <tr>
+                  <td class="info_head">Begin</td>
+                  <td><%= user.job.begin_date %></td>
+                </tr>
+                <tr>
+                  <td class="info_head">End</td>
+                  <td><%= user.job.end_date %></td>
+                </tr>
+              </table>
           <% else %>
               <p class="notice">No Jobs</p>
           <% end %>
@@ -126,11 +143,11 @@
         <% if user && user.education %>
             <table class="table">
               <tr>
-                <td>College</td>
+                <td class="info_head">College</td>
                 <td><%= user.education.college %></td>
               </tr>
               <tr>
-                <td>High School</td>
+                <td class="info_head">High School</td>
                 <td><%= user.education.high_school %></td>
               </tr>
             </table>
@@ -151,19 +168,19 @@
         <% if user && user.contact %>
             <table class="table">
               <tr>
-                <td>Phone</td>
+                <td class="info_head">Phone</td>
                 <td><%= user.contact.tel %></td>
               </tr>
               <tr>
-                <td>City</td>
+                <td class="info_head">City</td>
                 <td> <%= user.contact.city %></td>
               </tr>
               <tr>
-                <td>Country</td>
+                <td class="info_head">Country</td>
                 <td> <%= user.contact.country %></td>
               </tr>
               <tr>
-                <td>Address</td>
+                <td class="info_head">Address</td>
                 <td><%= user.contact.address %></td>
               </tr>
             </table>

@@ -7,6 +7,19 @@ body {
   font: normal 14px Roboto, arial, sans-serif;
 }
 
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td
+{
+  border-top: 0px;
+}
+
+.table{
+  margin-bottom: 10px;
+}
+
+.info_head{
+  font-weight: bold;
+}
+
 .post_button{
   float: left;
   margin-right: 10px;
@@ -70,7 +83,7 @@ body {
 }
 
 .navbar-brand {
-  padding: 10px 15px;
+  padding: 0px;
   color: #ac2925;
 }
 

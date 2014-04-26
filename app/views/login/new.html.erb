@@ -2,7 +2,7 @@
 
 <h1>Let's Get In</h1>
 <div class="login register">
-  <%= form_for @user, url: {action: "create"} do |f| %>
+  <%= form_for(@user, :url => {:action => "create"}) do |f| %>
       <% if @user.errors.any? %>
           <div class="sign_up_errors">
             <ul>
