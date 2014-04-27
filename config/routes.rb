@@ -1,6 +1,6 @@
 MiniFacebook::Application.routes.draw do
 
-  get "facebook/message"
+  get "facebook/get_messages"
   get "facebook/home"
   get "facebook/profile"
   get "facebook/find_friends"

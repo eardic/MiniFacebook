@@ -1,0 +1,31 @@
+<li style="margin-top: 3px">
+  <div class="row clearfix" id="msg-reply-div">
+    <div class="col-sm-2 src-res-img">
+      <%# Profile picture of sender %>
+      <% if friend.id == m.user_id %>
+          <% if friend.img_id %> <%# Profile picture of friend %>
+              <%= cl_image_tag friend.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+          <% else %>
+              <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
+          <% end %>
+      <% else %> <%# Profile picture of user %>
+          <% if user.img_id %>
+              <%= cl_image_tag user.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+          <% else %>
+              <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
+          <% end %>
+      <% end %>
+    </div>
+    <%# Name of user %>
+    <div class="col-sm-10 src-res-group">
+      <% if friend.id == m.user_id %>
+          <%= link_to "#{friend.name} #{friend.last_name}", facebook_friend_profile_path(:friend_id => friend.id), :class => 'src-res-name' %>
+      <% else %>
+          <%= link_to "#{user.name} #{user.last_name}", facebook_profile_path, :class => 'src-res-name' %>
+      <% end %>
+      <br>
+      <%# Profile picture of sender %>
+      <p class="text-info src-res-info"><%= m.message %></p>
+    </div>
+  </div>
+</li>

@@ -1,30 +1,74 @@
 <div class="col-md-3 col-sm-6">
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a href="#" class="pull-right">View all</a>
+      <a href="#requestModal" role="button" data-toggle="modal" class="pull-right">View all</a>
       <h4><i class="glyphicon glyphicon-retweet" style="color:#2262dd"></i>&nbsp;Requests</h4>
     </div>
     <div class="panel-body">
-      <div class="list-group">
-        <a href="" class="list-group-item">Request 1</a>
-        <a href="" class="list-group-item">Request 2</a>
-        <a href="" class="list-group-item">Request 3</a>
-      </div>
+      <ul class="list-unstyled">
+        <% if @user && !@user.requests.empty? %>
+            <% @user.requests.reverse.take(3).each do |r| %>
+                <li>
+                  <div class="row clearfix">
+                    <% friend = get_user(r.from_user_id) %>
+                    <div class="col-sm-4 src-res-img">
+                      <% if friend.img_id %>
+                          <%= cl_image_tag friend.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+                      <% else %>
+                          <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
+                      <% end %>
+                    </div>
+                    <div class="col-sm-6 src-res-group">
+                      <p class="src-res-name"><%= "#{friend.name} #{friend.last_name}" %></p>
+                    </div>
+                  </div>
+                </li>
+            <% end %>
+        <% else %>
+            <p class="text-center text-info">No Requests</p>
+        <% end %>
+      </ul>
     </div>
   </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a href="#" class="pull-right">View all</a>
+      <a href="#eventModal" role="button" data-toggle="modal" class="pull-right">View all</a>
       <h4><i class="glyphicon glyphicon-star-empty" style="color:#2262dd"></i>&nbsp;Events</h4>
     </div>
     <div class="panel-body">
-      <div class="list-group">
-        <a href="http://bootply.com/tagged/bootstrap-3" class="list-group-item">Event 1</a>
-        <a href="http://bootply.com/tagged/snippets" class="list-group-item">Event 2</a>
-        <a href="http://bootply.com/tagged/example" class="list-group-item">Event 3</a>
-      </div>
+      <p class="text-center text-info">No Events</p>
     </div>
   </div>
 
+</div>
+
+<!-- REQUEST DIALOG -->
+<div id="requestModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Requests</h2>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EVENTS DIALOG -->
+<div id="eventModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Events</h2>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
 </div>

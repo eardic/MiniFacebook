@@ -1,7 +1,7 @@
 class FacebookController < ApplicationController
   respond_to :html, :js
-
   before_filter :authenticate_user, :except => [:home, :profile, :find_friends]
+  @@clicked_friend_id = nil # for messaging system, messages will be sent to selected user in inbox list
 
   def home
     if session[:user_id]
@@ -20,7 +20,32 @@ class FacebookController < ApplicationController
   end
 
   def send_message
+    f_id = @@clicked_friend_id
+    u_id = session[:user_id]
+    msg = params[:message]
+    if f_id && msg
+      @user = User.find(u_id)
+      @friend = User.find(f_id)
+      @message = Message.new(to_user_id: f_id, message: msg, user_id: u_id)
+      @user.messages << @message
+      @user.save
+    end
+    render 'send_message.js'
+  end
 
+  def get_messages
+    f_id = params[:friend_id]
+    @@clicked_friend_id = f_id
+    u_id = session[:user_id]
+    if f_id
+      @user = User.find(u_id)
+      @friend = User.find(f_id)
+      f_msgs = @friend.messages.take(25).select { |m| m.to_user_id == u_id.to_i } # messages friend send to user
+      u_msgs = @user.messages.take(25).select { |m| m.to_user_id == f_id.to_i } # messages user send to friend
+      @messages = u_msgs + f_msgs # merge all messages
+      #@messages.sort_by(&:created_at)
+    end
+    render 'show_message.js'
   end
 
   def friend_profile

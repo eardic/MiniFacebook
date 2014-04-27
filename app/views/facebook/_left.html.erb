@@ -3,21 +3,39 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <%= link_to "View All", facebook_message_path, :class => 'pull-right' %>
+      <%# link_to "View All", facebook_message_path, :class => 'pull-right' %>
+      <a href="#msgModal" role="button" data-toggle="modal" class="pull-right">View All</a>
       <h4><i class="glyphicon glyphicon-inbox" style="color:#dd0309"></i>&nbsp;Messages</h4>
     </div>
     <div class="panel-body">
-      <div class="list-group">
-        <a href="" class="list-group-item">Message 1</a>
-        <a href="" class="list-group-item">Message 2</a>
-        <a href="" class="list-group-item">Message 3</a>
-      </div>
+      <ul class="list-unstyled">
+        <% if @user && !@user.friends.empty? %>
+            <% get_friends.take(3).each do |f| %>
+                <li>
+                  <div class="row clearfix">
+                    <div class="col-sm-4 src-res-img">
+                      <% if f.img_id %>
+                          <%= cl_image_tag f.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+                      <% else %>
+                          <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
+                      <% end %>
+                    </div>
+                    <div class="col-sm-6 src-res-group">
+                      <p class="src-res-name"><%= "#{f.name} #{f.last_name}" %></p>
+                    </div>
+                  </div>
+                </li>
+            <% end %>
+        <% else %>
+            <p class="notice">No Message</p>
+        <% end %>
+      </ul>
     </div>
   </div>
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a href="#" class="pull-right">View all</a>
+      <a href="#notificationModal" role="button" data-toggle="modal" class="pull-right">View All</a>
       <h4><i class="glyphicon glyphicon-bell" style="color:#dd0309"></i>&nbsp;Notifications</h4>
     </div>
     <div class="panel-body">
@@ -26,4 +44,90 @@
     </div>
   </div>
 
+</div>
+
+<!-- NOTIFICATION DIALOG -->
+<div id="notificationModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Notifications</h2>
+      </div>
+      <div class="modal-body">
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MSG DIALOG -->
+<div id="msgModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" style="width: 60%;max-height: 100%">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Messages</h2>
+      </div>
+      <div class="modal-body">
+        <!-- THE PANEL FOR NAMES OF FRIENDS -->
+        <div class="row">
+          <div class="col-md-4">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4><i class="glyphicon glyphicon-inbox" style="color:#dd0309"></i>&nbsp;Inbox</h4>
+              </div>
+              <div class="panel-body">
+                <ul class="list-unstyled">
+                  <% if @user && !@user.friends.empty? %>
+                      <% get_friends.each do |f| %>
+                          <li>
+                            <%= link_to facebook_get_messages_path(:friend_id => f.id), :remote => true, :id => 'msg-inbox-link' do %>
+                                <div class="row clearfix" id="msg-inbox-div">
+                                  <div class="col-sm-4 src-res-img">
+                                    <% if f.img_id %>
+                                        <%= cl_image_tag f.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+                                    <% else %>
+                                        <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
+                                    <% end %>
+                                  </div>
+                                  <div class="col-sm-6 src-res-group">
+                                    <p class="src-res-name"><%= "#{f.name} #{f.last_name}" %></p>
+                                  </div>
+                                </div>
+                            <% end %>
+                          </li>
+                      <% end %>
+                  <% else %>
+                      <p class="notice">No Friends</p>
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- MESSAGES PANEL FOR SELECTED FRIEND -->
+          <div class="col-md-8">
+            <!-- All messages of selected friend will be shown -->
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h4><i class="glyphicon glyphicon-send" style="color:#dd0309"></i>&nbsp;Messages</h4>
+              </div>
+              <div class="panel-body" id="msg-container">
+                <ul class="list-unstyled" id="msg-list">
+                  <p class="text-info text-center"> Select a friend to communicate from inbox :)</p>
+                </ul>
+              </div>
+              <div class="panel-footer">
+                <div class="input-group-btn">
+                  <%= form_tag(facebook_send_message_path, :method => 'post', :remote => true) do %>
+                      <%= text_field_tag :message, nil, :placeholder => "Send Message...", :class => 'form-control' %>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
