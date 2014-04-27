@@ -15,11 +15,14 @@
           <div class="col-sm-4 src-res-group">
             <%= link_to "#{f.name} #{f.last_name}", facebook_friend_profile_path(:friend_id => f.id), :class => 'src-res-name' %>
             <br>
-            <p class="text-info src-res-info"><%= f.mail %></p>
-            <p class="text-info src-res-info"><%= f.contact.city if f.contact %></p>
+            <p class="src-res-info"><%= f.mail %></p>
+            <p class="src-res-info"><%= f.contact.city if f.contact %></p>
           </div>
           <div class="col-sm-3 pull-right">
-            <%= button_to "Add Friend", {:action => 'add_friend', :id => f.id}, :class => 'btn btn-default btn-sm' %>
+            <% if !is_request_sent(f.id) && !is_friend(f.id) && f.id != @user.id %>
+                <%= button_to "Add Friend", {:action => 'send_request', :id => f.id}, :remote => true, :class => 'btn btn-default btn-sm',
+                              :id => "add_friend_btn_#{f.id}" %>
+            <% end %>
           </div>
         </div>
         <hr>

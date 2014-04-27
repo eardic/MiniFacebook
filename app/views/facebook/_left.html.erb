@@ -11,7 +11,7 @@
       <ul class="list-unstyled">
         <% if @user && !@user.friends.empty? %>
             <% get_friends.take(3).each do |f| %>
-                <li>
+                <li style="margin-top: 3px">
                   <div class="row clearfix">
                     <div class="col-sm-4 src-res-img">
                       <% if f.img_id %>

@@ -54,18 +54,37 @@ class FacebookController < ApplicationController
   end
 
   def add_friend
+    if params[:friend_id]
+      @user = User.find(session[:user_id])
+      @user.friends.create(friend_id: params[:friend_id])
+      @request = Request.find(params[:request_id])
+      @request.destroy
+    end
+    render 'answer_request.js'
+  end
+
+  def deny_request
+    if params[:request_id] #request id
+      @request = Request.find(params[:request_id])
+      @request.destroy
+    end
+    render 'answer_request.js'
+  end
+
+  def send_request
     if params[:id]
       @user = User.find(session[:user_id])
-      @user.friends.create(friend_id: params[:id])
+      @friend = User.find(params[:id])
+      @friend.requests.create(from_user_id: @user.id)
     end
-    render 'profile'
+    render 'send_request.js'
   end
 
   def find_friends
     @user = User.find(session[:user_id])
     @friends = User.search(params[:src_term])
     @user.friends.each do |u|
-      @friends.select { |f| f.id == u.friend_id }.each do |d|
+      @friends.select { |f| f.id == @user.id }.each do |d|
         @friends.delete(d)
       end
     end

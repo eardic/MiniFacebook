@@ -9,6 +9,8 @@ MiniFacebook::Application.routes.draw do
   delete "facebook/delete_post"
   post "facebook/add_friend"
   post "facebook/send_message"
+  post "facebook/send_request"
+  post "facebook/deny_request"
   post "facebook/post_text"
   post "facebook/like_post"
   post "facebook/dislike_post"

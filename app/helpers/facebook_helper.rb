@@ -7,4 +7,12 @@ module FacebookHelper
     User.find(id)
   end
 
+  def is_friend(id)
+    !User.find(session[:user_id]).friends.where(:friend_id => id).empty?
+  end
+
+  def is_request_sent(id)
+    !User.find(id).requests.where(:from_user_id => session[:user_id]).empty?
+  end
+
 end
