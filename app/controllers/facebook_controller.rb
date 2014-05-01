@@ -48,6 +48,8 @@ class FacebookController < ApplicationController
   def add_friend
     if params[:friend_id]
       @user = User.find(session[:user_id])
+      friend = User.find(params[:friend_id])
+      friend.friends.create(friend_id: @user.id)
       @user.friends.create(friend_id: params[:friend_id])
       @request = Request.find(params[:request_id])
       @request.destroy

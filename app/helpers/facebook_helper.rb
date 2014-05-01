@@ -10,13 +10,11 @@ module FacebookHelper
   def get_home_posts
     user = User.find(session[:user_id])
     f_ids = Array.new
+    f_ids << user.id
     @user.friends.each do |f|
       f_ids << f.friend_id
     end
-    friend_posts = Post.where(user_id: f_ids) # get posts using ids of friends
-    user_posts = Post.where(user_id: user.id) # add posts of user
-    home_posts = friend_posts.merge user_posts
-    return home_posts.order(created_at: :desc)
+    Post.where(user_id: f_ids).order(updated_at: :desc) # get posts using ids of friends
   end
 
   def is_friend(id)
