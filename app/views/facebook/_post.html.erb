@@ -1,27 +1,27 @@
 <% if is_home == false %>
-    <% posts = user.posts.all %>
+    <% posts = user.posts.all.reverse %>
 <% else %>
-    <% posts = user.posts.last(1) %>
+    <% posts = get_home_posts() %>
 <% end %>
-
 <!-- Show users posts -->
 <!-- If home page, then show last post of user(in home page) -->
 <!-- Else show all posts of user(in profile page) -->
-<% posts.reverse_each do |p| %>
+<% posts.each do |p| %>
+    <% friend = get_user(p.user_id) %>
     <div class="panel panel-default" id="post_div_<%= p.id %>">
       <div class="panel-heading">
         <%= link_to "×", facebook_delete_post_path(:post_id => p.id), :remote => true, :class => 'close',
                     :style => 'width:12px;margin-top:5px;font-size:16px', :method => 'delete', :id => "post_delete_btn_#{p.id}" %>
         <div class="row" style="margin-top: 5px">
           <div class="col-sm-1">
-            <% if user.img_id %>
-                <%= cl_image_tag user.img_id, :width => 40, :height => 40, :class => 'center-block' %>
+            <% if friend.img_id %>
+                <%= cl_image_tag friend.img_id, :width => 40, :height => 40, :class => 'center-block' %>
             <% else %>
                 <%= image_tag('avatar.png', size: '40x40', class: 'center-block') %>
             <% end %>
           </div>
           <div class="col-sm-3">
-            <%= link_to "#{user.name} #{user.last_name}", facebook_profile_path, :id => 'post_user_name' %>
+            <%= link_to "#{friend.name} #{friend.last_name}", facebook_profile_path, :id => 'post_user_name' %>
             <br>
             <p id="post_elapsed_time"><%= time_ago_in_words(p.created_at) %> ago</p>
           </div>
@@ -55,11 +55,3 @@
       </div>
     </div>
 <% end %>
-
-<!-- Show friends post if home page is active -->
-<% if is_home %>
-
-<% end %>
-
-
-

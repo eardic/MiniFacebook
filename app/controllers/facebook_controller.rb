@@ -11,14 +11,6 @@ class FacebookController < ApplicationController
     end
   end
 
-  def message
-    if session[:user_id]
-      @user = User.find(session[:user_id])
-    else
-      redirect_to login_index_path
-    end
-  end
-
   def send_message
     f_id = @@clicked_friend_id
     u_id = session[:user_id]
