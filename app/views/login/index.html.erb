@@ -11,11 +11,7 @@
       <%= password_field_tag :password, nil, :placeholder => "Password", :class => "input_field" %>
       <%= button_tag "Login" %>
   <% end %>
-  <% if flash[:color]== "valid" %>
-      <div class="valid_notice">
-        <p><%= flash[:notice] %></p>
-      </div>
-  <% elsif flash[:color]== "invalid" %>
+  <% if flash[:status]== "invalid" %>
       <div class="invalid_notice">
         <p><%= flash[:notice] %></p>
       </div>

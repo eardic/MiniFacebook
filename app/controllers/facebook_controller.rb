@@ -11,6 +11,14 @@ class FacebookController < ApplicationController
     end
   end
 
+  def delete_notif
+    if params[:notif_id]
+      @notif = Notification.find(params[:notif_id])
+      @notif.destroy
+    end
+    render 'delete_notif.js'
+  end
+
   def send_message
     f_id = @@clicked_friend_id
     u_id = session[:user_id]
@@ -25,6 +33,7 @@ class FacebookController < ApplicationController
     render 'send_message.js'
   end
 
+  # Called when clicked a user in inbox panel at home page
   def get_messages
     f_id = params[:friend_id]
     @@clicked_friend_id = f_id
@@ -32,10 +41,8 @@ class FacebookController < ApplicationController
     if f_id
       @user = User.find(u_id)
       @friend = User.find(f_id)
-      f_msgs = @friend.messages.take(25).select { |m| m.to_user_id == u_id.to_i } # messages friend send to user
-      u_msgs = @user.messages.take(25).select { |m| m.to_user_id == f_id.to_i } # messages user send to friend
-      @messages = u_msgs + f_msgs # merge all messages
-      #@messages.sort_by(&:created_at)
+      @messages = Message.where("user_id = #{f_id} and to_user_id = #{u_id} or user_id = #{u_id} and to_user_id = #{f_id}").
+          order(created_at: :desc).limit(50)
     end
     render 'show_message.js'
   end
@@ -97,6 +104,7 @@ class FacebookController < ApplicationController
     @is_home = params[:is_home] == "true"
     if @user
       @user.posts.create(post: params[:post])
+      send_notif_to_friends @user, 0, params[:post]
     end
     render 'post_text.js'
   end
@@ -106,6 +114,7 @@ class FacebookController < ApplicationController
       @user = User.find(session[:user_id])
       @post = Post.find(params[:post_id])
       like true, @post
+      send_notif_to_friends @user, 1, @post.post
     end
     render 'like_post.js'
   end
@@ -115,6 +124,7 @@ class FacebookController < ApplicationController
       @user = User.find(session[:user_id])
       @post = Post.find(params[:post_id])
       like false, @post
+      send_notif_to_friends @user, 2, @post.post
     end
     render 'like_post.js'
   end
@@ -139,6 +149,7 @@ class FacebookController < ApplicationController
       @user = User.find(session[:user_id])
       @post = Post.find(p_id)
       @user.comments.create(post_id: p_id, text: comment)
+      send_notif_to_friends @user, 3, comment
     end
     render 'add_comment.js'
   end
@@ -170,6 +181,13 @@ class FacebookController < ApplicationController
     params.require(:user).permit(:name, :last_name, :birth, :gender)
   end
 
+  def send_notif_to_friends(user, type, content)
+    # Send notification to all friends
+    user.friends.each do |f|
+      Notification.create(user_id: f.id, friend_id: user.id, content: content, notif_type: type)
+    end
+  end
+
   def like(is_like, post)
     if post # not null
       if is_like # like or dislike
@@ -190,10 +208,6 @@ class FacebookController < ApplicationController
         post.dislike = count # set dislikes
       end
       post.save # save like or dislike count to db
-      puts "saved post"
-      puts post.post
-      puts post.like
-      puts post.dislike
     end
   end
 end

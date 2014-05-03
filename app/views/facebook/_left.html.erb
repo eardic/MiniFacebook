@@ -3,31 +3,39 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <%# link_to "View All", facebook_message_path, :class => 'pull-right' %>
       <a href="#msgModal" role="button" data-toggle="modal" class="pull-right">View All</a>
       <h4><i class="glyphicon glyphicon-inbox" style="color:#dd0309"></i>&nbsp;Messages</h4>
     </div>
     <div class="panel-body">
       <ul class="list-unstyled">
-        <% if @user && !@user.friends.empty? %>
-            <% get_friends.take(3).each do |f| %>
+        <% msgs = get_n_messages(@user) %>
+        <% if !msgs.empty? %>
+            <% msgs.each do |m| %>
+                <% if m.user_id == @user.id %>
+                    <% friend = get_user(m.to_user_id) %>
+                <% else %>
+                    <% friend = get_user(m.user_id) %>
+                <% end %>
                 <li style="margin-top: 3px">
                   <div class="row clearfix">
-                    <div class="col-sm-4 src-res-img">
-                      <% if f.img_id %>
-                          <%= cl_image_tag f.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+                    <div class="col-sm-3 src-res-img" style="margin-right: 5px">
+                      <% if friend.img_id %>
+                          <%= cl_image_tag friend.img_id, :width => 50, :height => 50, :class => 'center-block' %>
                       <% else %>
                           <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
                       <% end %>
                     </div>
-                    <div class="col-sm-6 src-res-group">
-                      <p class="src-res-name"><%= "#{f.name} #{f.last_name}" %></p>
+                    <div class="col-md-8 src-res-group">
+                      <p class="src-res-name"><%= "#{friend.name} #{friend.last_name}" %></p>
+                      <p class="src-res-info text-overflow-hidden">
+                        <%= m.message %>
+                      </p>
                     </div>
                   </div>
                 </li>
             <% end %>
         <% else %>
-            <p class="notice">No Message</p>
+            <p class="text-center text-info">No Message</p>
         <% end %>
       </ul>
     </div>
@@ -39,8 +47,31 @@
       <h4><i class="glyphicon glyphicon-bell" style="color:#dd0309"></i>&nbsp;Notifications</h4>
     </div>
     <div class="panel-body">
-      <div class="clearfix"></div>
-      More more more more...
+      <ul class="list-unstyled">
+        <% if @user && !@user.notifications.empty? %>
+            <% @user.notifications.each do |n| %>
+                <li id="notif_id_<%= n.id %>" style="margin-top: 3px">
+                  <div class="row clearfix">
+                    <% friend = get_user(n.friend_id) %>
+                    <div class="col-sm-3 src-res-img" style="margin-right: 5px">
+                      <% if friend.img_id %>
+                          <%= cl_image_tag friend.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+                      <% else %>
+                          <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
+                      <% end %>
+                    </div>
+                    <div class="col-md-8 src-res-group">
+                      <span style="font-size: 15px"><%= "#{friend.name} #{friend.last_name}" %></span>
+                      <span style="font-size: 13px">&nbsp;<%= create_notif_text(n.notif_type) %>&nbsp;:&nbsp;</span>
+                      <span class="text-overflow-hidden" style="font-size: 13px"><%= n.content %></span>
+                    </div>
+                  </div>
+                </li>
+            <% end %>
+        <% else %>
+            <p class="text-center text-info">No Notification</p>
+        <% end %>
+      </ul>
     </div>
   </div>
 
@@ -55,7 +86,33 @@
         <h2 class="text-center">Notifications</h2>
       </div>
       <div class="modal-body">
-
+        <ul class="list-unstyled">
+          <% if @user && !@user.notifications.empty? %>
+              <% @user.notifications.each do |n| %>
+                  <li id="notif_id_<%= n.id %>" style="margin-top: 3px">
+                    <div class="row clearfix">
+                      <% friend = get_user(n.friend_id) %>
+                      <div class="col-sm-2 src-res-img" style="margin-right: 5px">
+                        <% if friend.img_id %>
+                            <%= cl_image_tag friend.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+                        <% else %>
+                            <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
+                        <% end %>
+                      </div>
+                      <div class="col-sm-9 src-res-group">
+                        <%= link_to "×", facebook_delete_notif_path(:notif_id => n.id), :remote => true, :class => 'close',
+                                    :style => 'width:12px;margin:0px;font-size:16px;font-weight:normal', :method => 'delete' %>
+                        <span style="font-size: 15px"><%= "#{friend.name} #{friend.last_name}" %></span>
+                        <span style="font-size: 13px">&nbsp;<%= create_notif_text(n.notif_type) %>&nbsp;:&nbsp;</span>
+                        <span style="font-size: 13px;overflow-wrap: break-word"><%= n.content %></span>
+                      </div>
+                    </div>
+                  </li>
+              <% end %>
+          <% else %>
+              <p class="text-center text-info">No Notification</p>
+          <% end %>
+        </ul>
       </div>
     </div>
   </div>
@@ -91,7 +148,7 @@
                                         <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
                                     <% end %>
                                   </div>
-                                  <div class="col-sm-6 src-res-group">
+                                  <div class="col-md-6 src-res-group">
                                     <p class="src-res-name"><%= "#{f.name} #{f.last_name}" %></p>
                                   </div>
                                 </div>

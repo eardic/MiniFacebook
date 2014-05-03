@@ -28,7 +28,7 @@ class LoginController < ApplicationController
       redirect_to facebook_home_path
     else
       flash[:notice] = "Invalid Username or Password"
-      flash[:color]= "invalid"
+      flash[:status]= "invalid"
       render "index"
     end
   end

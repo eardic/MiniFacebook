@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140427201936) do
+ActiveRecord::Schema.define(version: 20140503120134) do
 
   create_table "comments", force: true do |t|
     t.integer  "post_id"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 20140427201936) do
     t.integer  "user_id"
     t.integer  "to_user_id"
     t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "notifications", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "friend_id"
+    t.integer  "notif_type"
+    t.text     "content"
+    t.integer  "element_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

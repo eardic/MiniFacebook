@@ -44,7 +44,6 @@ html, body {
   overflow-wrap: break-word;
 }
 
-
 .info_head {
   font-weight: bold;
 }
@@ -82,12 +81,19 @@ html, body {
   font-size: 15px;
   margin-top: 0px;
   float: left;
+  color: #428BCA;
 }
 
 .src-res-info {
   font-size: small;
   margin-bottom: 0px;
   clear: both;
+}
+
+.text-overflow-hidden {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .navbar-default {

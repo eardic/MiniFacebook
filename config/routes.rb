@@ -7,6 +7,7 @@ MiniFacebook::Application.routes.draw do
   get "facebook/log_out"
   get "facebook/friend_profile"
   delete "facebook/delete_post"
+  delete "facebook/delete_notif"
   post "facebook/add_friend"
   post "facebook/send_message"
   post "facebook/send_request"
