@@ -11,11 +11,17 @@
  *= require_self
  *= require_tree .
  */
-.profile_image{
+.profile_image {
     margin-top: 20px;
     margin-bottom: 20px;
     border-radius: 50%;
     margin-left: auto;
     margin-right: auto;
     display: block;
+}
+
+.sign_up_errors {
+    text-align: left;
+    color: red;
+    font-size: 13px;
 }

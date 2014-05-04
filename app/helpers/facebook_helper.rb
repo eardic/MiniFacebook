@@ -15,6 +15,8 @@ module FacebookHelper
         "like your post"
       when 3
         "commented on your post"
+      when 4
+        "created an event"
     end
   end
 
@@ -27,7 +29,7 @@ module FacebookHelper
         order(created_at: :desc).limit(num)
   end
 
-  # returns last message got from friend(id)
+  # returns last message between user and friend
   def get_last_message(to_id, from_id)
     u_msg = User.find(to_id).messages.where(to_user_id: from_id).last
     f_msg = User.find(from_id).messages.where(to_user_id: to_id).last

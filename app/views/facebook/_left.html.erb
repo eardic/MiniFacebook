@@ -50,7 +50,7 @@
       <ul class="list-unstyled">
         <% if @user && !@user.notifications.empty? %>
             <% @user.notifications.each do |n| %>
-                <li id="notif_id_<%= n.id %>" style="margin-top: 3px">
+                <li id="notif_pre_id_<%= n.id %>" style="margin-top: 3px">
                   <div class="row clearfix">
                     <% friend = get_user(n.friend_id) %>
                     <div class="col-sm-3 src-res-img" style="margin-right: 5px">

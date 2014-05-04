@@ -1,0 +1,5 @@
+$("#event_id_<%= @event.id %>").fadeOut("slow", function () {
+    $("#event_id_<%= @event.id %>").remove();
+    $("#event_pre_id_<%= @event.id %>").remove();
+});
+

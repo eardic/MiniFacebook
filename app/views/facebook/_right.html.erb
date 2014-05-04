@@ -33,11 +33,31 @@
 
   <div class="panel panel-default">
     <div class="panel-heading">
-      <a href="#eventModal" role="button" data-toggle="modal" class="pull-right">View all</a>
+      <a href="#eventModal" role="button" data-toggle="modal" class="pull-right">Manage</a>
+      <a href="#eventCreate" role="button" data-toggle="modal" class="pull-right">Create&nbsp;</a>
       <h4><i class="glyphicon glyphicon-star-empty" style="color:#2262dd"></i>&nbsp;Events</h4>
     </div>
     <div class="panel-body">
-      <p class="text-center text-info">No Events</p>
+      <ul class="list-unstyled">
+        <% if @user && !@user.events.empty? %>
+            <% @user.events.take(3).each do |n| %>
+                <li id="event_pre_id_<%= n.id %>" style="margin-top: 3px">
+                  <div class="row clearfix">
+                    <div class="col-sm-1 src-res-img" style="margin-right: 10px">
+                      <i class="glyphicon glyphicon-calendar"></i>
+                    </div>
+                    <div class="col-md-10 src-res-group">
+                      <span style="font-size: 15px"><%= n.name %></span>
+                      <span style="font-size: 13px">&nbsp;<%= n.when %>&nbsp;</span>
+                      <span class="text-overflow-hidden" style="font-size: 13px"><%= n.details %></span>
+                    </div>
+                  </div>
+                </li>
+            <% end %>
+        <% else %>
+            <p class="text-center text-info">No Events</p>
+        <% end %>
+      </ul>
     </div>
   </div>
 
@@ -96,7 +116,65 @@
         <h2 class="text-center">Events</h2>
       </div>
       <div class="modal-body">
+        <ul class="list-unstyled">
+          <% if @user && !@user.events.empty? %>
+              <% @user.events.each do |n| %>
+                  <li id="event_id_<%= n.id %>" style="margin-top: 3px">
+                    <div class="row clearfix">
+                      <div class="col-sm-1 src-res-img" style="margin-right: 10px">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </div>
+                      <div class="col-md-10 src-res-group">
+                        <%= link_to "×", facebook_delete_event_path(:event_id => n.id), :remote => true, :class => 'close',
+                                    :style => 'width:12px;margin:0px;font-size:16px;font-weight:normal', :method => 'delete' %>
+                        <span style="font-size: 15px"><%= n.name %></span>
+                        <span style="font-size: 13px">&nbsp;<%= n.when %>&nbsp;</span>
+                        <span style="font-size: 13px"><%= n.details %></span>
+                      </div>
+                    </div>
+                  </li>
+              <% end %>
+          <% else %>
+              <p class="text-center text-info">No Events</p>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 
+<!-- EVENTS DIALOG -->
+<div id="eventCreate" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
+        <h2 class="text-center">Events</h2>
+      </div>
+      <div class="modal-body">
+        <%= form_tag(url_for(action: 'create_event', controller: 'facebook'), :method => :post) do %>
+            <p>
+              <%= text_field_tag :name, nil, :placeholder => "Name", :class => 'form-control', :required => true %>
+            </p>
+            <p>
+              <%= text_area_tag :details, nil, :placeholder => "Details", :class => 'form-control', :required => true %>
+            </p>
+            <p>
+              <%= label_tag "When" %>
+              <%= date_field_tag :when, nil, :class => 'form-control', :required => true %>
+            </p>
+            <p>
+              <%= time_field_tag :begin_time, nil, :class => 'form-control' %>
+            </p>
+            <p>
+              <%= label_tag "Until" %>
+              <%= date_field_tag :until, nil, :class => 'form-control' %>
+            </p>
+            <p>
+              <%= time_field_tag :end_time, nil, :class => 'form-control' %>
+            </p>
+            <%= button_tag "Create", :class => 'btn' %>
+        <% end %>
       </div>
     </div>
   </div>

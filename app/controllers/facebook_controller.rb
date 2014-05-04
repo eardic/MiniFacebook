@@ -171,6 +171,27 @@ class FacebookController < ApplicationController
     render 'delete_post.js'
   end
 
+  def create_event
+    @event = Event.new
+    @event.name = params[:name]
+    @event.details = params[:details]
+    @event.when = params[:when]
+    @event.begin_time = params[:begin_time]
+    @event.until = params[:until]
+    @event.end_time = params[:end_time]
+    @user = User.find(session[:user_id])
+    @user.events << @event
+    @user.save
+    send_notif_to_friends @user, 4, @event.name
+    redirect_to facebook_home_path
+  end
+
+  def delete_event
+    @event = Event.find(params[:event_id])
+    @event.destroy
+    render "delete_event.js"
+  end
+
   def log_out
     session[:user_id] = nil
     redirect_to login_index_path

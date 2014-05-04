@@ -1,4 +1,5 @@
 $("#notif_id_<%= @notif.id %>").fadeOut("slow", function () {
     $("#notif_id_<%= @notif.id %>").remove();
+    $("#notif_pre_id_<%= @notif.id %>").remove();
 });
 

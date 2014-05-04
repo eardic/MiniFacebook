@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  details: MyText
+  where: MyString
+  when: 2014-05-04
+  time: 2014-05-04 11:45:05
+
+two:
+  name: MyString
+  details: MyText
+  where: MyString
+  when: 2014-05-04
+  time: 2014-05-04 11:45:05

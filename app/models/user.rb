@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :requests, dependent: :destroy
   has_many :notifications, dependent: :destroy
+  has_many :events, dependent: :destroy
 
   has_one :job, dependent: :destroy
   has_one :education, dependent: :destroy
