@@ -45,12 +45,11 @@ class ProfileController < ApplicationController
       @user = User.find(session[:user_id])
       @user.img_id = preloaded.identifier
       if @user.save
-        puts "HeLLOOOOOOOOOOOOOOO"
+        puts 'Photo saved successfully'
       else
-        puts "NOOOOOOOOO"
+        puts 'Photo could not uploaded'
       end
     end
-    puts "AQQQQQQQQQQQQ"
     redirect_to facebook_profile_path
   end
 
