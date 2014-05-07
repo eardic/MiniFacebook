@@ -2,23 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e84a2f63-b9fe-42ca-8eb1-aa5eec3b5904" name="Default" comment="Login-Logout düzeltildi.&#10;Header ayarı yapıldı.&#10;&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20140504084505_create_events.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/layouts/_errors.html.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/facebook/delete_event.js.erb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/event.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/facebook/_left.html.erb" afterPath="$PROJECT_DIR$/app/views/facebook/_left.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/facebook/_right.html.erb" afterPath="$PROJECT_DIR$/app/views/facebook/_right.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/facebook/delete_notif.js.erb" afterPath="$PROJECT_DIR$/app/views/facebook/delete_notif.js.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/facebook_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/facebook_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helpers/facebook_helper.rb" afterPath="$PROJECT_DIR$/app/helpers/facebook_helper.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login/index.html.erb" afterPath="$PROJECT_DIR$/app/views/login/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/login.css.scss" afterPath="$PROJECT_DIR$/app/assets/stylesheets/login.css.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/login/new.html.erb" afterPath="$PROJECT_DIR$/app/views/login/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/facebook/profile.html.erb" afterPath="$PROJECT_DIR$/app/views/facebook/profile.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/user.rb" afterPath="$PROJECT_DIR$/app/models/user.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="MiniFacebook.iws" />
@@ -31,8 +14,8 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MiniFacebook@Development__MiniFacebook.coverage" NAME="Development: MiniFacebook Coverage Results" MODIFIED="1399194031086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MiniFacebook" />
-    <SUITE FILE_PATH="coverage/MiniFacebook@Production__MiniFacebook.coverage" NAME="Production: MiniFacebook Coverage Results" MODIFIED="1398519657914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MiniFacebook" />
+    <SUITE FILE_PATH="coverage/MiniFacebook@Development__MiniFacebook.coverage" NAME="Development: MiniFacebook Coverage Results" MODIFIED="1399482887506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MiniFacebook" />
+    <SUITE FILE_PATH="coverage/MiniFacebook@Production__MiniFacebook.coverage" NAME="Production: MiniFacebook Coverage Results" MODIFIED="1399483406066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MiniFacebook" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -46,10 +29,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="_left.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_left.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/facebook/_left.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="33" selection-start="2208" selection-end="2208" vertical-scroll-proportion="0.18711019" vertical-offset="794" max-vertical-offset="3315">
+            <state line="52" column="33" selection-start="2208" selection-end="2208" vertical-scroll-proportion="-7.8461537" vertical-offset="680" max-vertical-offset="3315">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="database.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/database.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="17" selection-start="620" selection-end="620" vertical-scroll-proportion="0.48350397" vertical-offset="0" max-vertical-offset="879">
               <folding />
             </state>
           </provider>
@@ -58,20 +50,8 @@
       <file leaf-file-name="_right.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/facebook/_right.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="132" column="28" selection-start="6421" selection-end="6421" vertical-scroll-proportion="-15.076923" vertical-offset="1852" max-vertical-offset="3179">
-              <folding>
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-              </folding>
+            <state line="132" column="28" selection-start="6421" selection-end="6421" vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="3179">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -79,7 +59,7 @@
       <file leaf-file-name="profile.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/facebook/profile.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="84" column="124" selection-start="3195" selection-end="3195" vertical-scroll-proportion="84.46154" vertical-offset="3624" max-vertical-offset="4522">
+            <state line="84" column="124" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.0" vertical-offset="3624" max-vertical-offset="4522">
               <folding />
             </state>
           </provider>
@@ -97,7 +77,7 @@
       <file leaf-file-name="facebook_helper.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/helpers/facebook_helper.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="25" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1258">
+            <state line="18" column="25" selection-start="339" selection-end="339" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="1258">
               <folding />
             </state>
           </provider>
@@ -106,16 +86,7 @@
       <file leaf-file-name="facebook.css.scss" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/facebook.css.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="94" column="22" selection-start="1378" selection-end="1378" vertical-scroll-proportion="-15.923077" vertical-offset="1184" max-vertical-offset="4641">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routes.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/routes.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="8" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
+            <state line="94" column="22" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0" vertical-offset="1184" max-vertical-offset="4641">
               <folding />
             </state>
           </provider>
@@ -143,10 +114,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/views/facebook/dislike_post.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/facebook/_post_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/facebook/delete_post.js.erb" />
-        <option value="$PROJECT_DIR$/app/views/facebook/like_post.js.erb" />
         <option value="$PROJECT_DIR$/app/models/comment.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20140420213204_create_comments.rb" />
         <option value="$PROJECT_DIR$/app/views/facebook/add_comment.js.erb" />
@@ -194,6 +161,10 @@
         <option value="$PROJECT_DIR$/app/views/facebook/_left.html.erb" />
         <option value="$PROJECT_DIR$/app/views/facebook/delete_notif.js.erb" />
         <option value="$PROJECT_DIR$/app/views/facebook/delete_event.js.erb" />
+        <option value="$PROJECT_DIR$/Gemfile" />
+        <option value="$PROJECT_DIR$/config/database.yml" />
+        <option value="$PROJECT_DIR$/config/environments/development.rb" />
+        <option value="$PROJECT_DIR$/config/environments/production.rb" />
       </list>
     </option>
   </component>
@@ -258,6 +229,8 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -286,11 +259,39 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniFacebook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniFacebook" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="environments" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniFacebook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MiniFacebook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -305,59 +306,17 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="facebook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniFacebook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniFacebook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniFacebook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="MiniFacebook" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="org.jetbrains.plugins.ruby.settings.RubyActiveModuleSdkConfigurable" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
@@ -381,7 +340,7 @@
       <recent name="C:\Users\azat\RubymineProjects\MiniFacebook\app" />
     </key>
   </component>
-  <component name="RunManager" selected="Rails.Development: MiniFacebook">
+  <component name="RunManager" selected="Rails.Production: MiniFacebook">
     <configuration default="true" type="RakeRunConfigurationType" factoryName="Rake">
       <module name="" />
       <RAKE_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
@@ -711,15 +670,15 @@
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3296582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32233223" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3212321" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278328" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20340788" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21618743" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34068358" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.41144115" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41034102" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986626" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -773,71 +732,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/assets/images/facelook_logo.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/images/logo2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/facebook/_footer.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="29" selection-end="29" vertical-scroll-proportion="0.03125" vertical-offset="0" max-vertical-offset="544" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140420213204_create_comments.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="24" selection-start="143" selection-end="143" vertical-scroll-proportion="0.12431444" vertical-offset="0" max-vertical-offset="547">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/request.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="53" selection-end="53" vertical-scroll-proportion="0.02982456" vertical-offset="0" max-vertical-offset="570">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/facebook/_header.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="0" selection-start="2284" selection-end="3001" vertical-scroll-proportion="0.23529412" vertical-offset="892" max-vertical-offset="1836" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140412134517_create_friends.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="570">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140427201936_create_requests.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="29" selection-start="123" selection-end="123" vertical-scroll-proportion="0.093235835" vertical-offset="0" max-vertical-offset="547">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/facebook/find_friends.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="0" selection-start="343" selection-end="343" vertical-scroll-proportion="0.5" vertical-offset="0" max-vertical-offset="544">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/facebook/send_request.js.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="33" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0" vertical-offset="17" max-vertical-offset="119" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/post.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="41" selection-start="92" selection-end="92" vertical-scroll-proportion="0.05964912" vertical-offset="0" max-vertical-offset="570" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/delete_post.js.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="0" selection-start="111" selection-end="111" vertical-scroll-proportion="0.125" vertical-offset="0" max-vertical-offset="544" />
@@ -850,23 +744,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/home.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="68" selection-start="476" selection-end="476" vertical-scroll-proportion="0.5" vertical-offset="0" max-vertical-offset="612">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20140412130229_create_users.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="22" selection-start="246" selection-end="246" vertical-scroll-proportion="0.3174274" vertical-offset="0" max-vertical-offset="482">
-          <folding />
-        </state>
+        <state line="16" column="68" selection-start="476" selection-end="476" vertical-scroll-proportion="0.5" vertical-offset="0" max-vertical-offset="612" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140412134838_create_relationships.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="482">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="482" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/notification.rb">
@@ -886,9 +769,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140412135308_create_posts.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="16" selection-start="129" selection-end="129" vertical-scroll-proportion="0.13465346" vertical-offset="0" max-vertical-offset="505">
-          <folding />
-        </state>
+        <state line="4" column="16" selection-start="129" selection-end="129" vertical-scroll-proportion="0.13465346" vertical-offset="0" max-vertical-offset="505" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/_search.html.erb">
@@ -903,16 +784,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140503120134_create_notifications.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="26" selection-start="155" selection-end="155" vertical-scroll-proportion="0.13465346" vertical-offset="0" max-vertical-offset="505">
-          <folding />
-        </state>
+        <state line="4" column="26" selection-start="155" selection-end="155" vertical-scroll-proportion="0.13465346" vertical-offset="0" max-vertical-offset="505" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140412135145_create_messages.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="27" selection-start="146" selection-end="146" vertical-scroll-proportion="0.07736064" vertical-offset="0" max-vertical-offset="879">
-          <folding />
-        </state>
+        <state line="4" column="27" selection-start="146" selection-end="146" vertical-scroll-proportion="0.07736064" vertical-offset="0" max-vertical-offset="879" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/_comment.html.erb">
@@ -922,160 +799,95 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20140504084505_create_events.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="22" selection-start="266" selection-end="266" vertical-scroll-proportion="0.33530572" vertical-offset="0" max-vertical-offset="507">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/routes.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="8" selection-start="310" selection-end="310" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1666">
-          <folding />
-        </state>
+        <state line="10" column="22" selection-start="266" selection-end="266" vertical-scroll-proportion="0.33530572" vertical-offset="0" max-vertical-offset="507" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/_profile.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="112" column="30" selection-start="3571" selection-end="3571" vertical-scroll-proportion="3.2162163" vertical-offset="357" max-vertical-offset="3366">
-          <folding />
-        </state>
+        <state line="112" column="30" selection-start="3571" selection-end="3571" vertical-scroll-proportion="3.2162163" vertical-offset="357" max-vertical-offset="3366" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/event.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="33" selection-start="162" selection-end="162" vertical-scroll-proportion="0.13412228" vertical-offset="0" max-vertical-offset="507">
-          <folding />
-        </state>
+        <state line="4" column="33" selection-start="162" selection-end="162" vertical-scroll-proportion="0.13412228" vertical-offset="0" max-vertical-offset="507" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/login/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.10602911" vertical-offset="0" max-vertical-offset="481">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/facebook.css.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="22" selection-start="1378" selection-end="1378" vertical-scroll-proportion="-15.923077" vertical-offset="1184" max-vertical-offset="4641">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="185" selection-end="185" vertical-scroll-proportion="0.10602911" vertical-offset="0" max-vertical-offset="481" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="100" selection-start="483" selection-end="483" vertical-scroll-proportion="0.33406115" vertical-offset="0" max-vertical-offset="458">
-          <folding />
-        </state>
+        <state line="9" column="100" selection-start="483" selection-end="483" vertical-scroll-proportion="0.33406115" vertical-offset="0" max-vertical-offset="458" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="1" selection-start="702" selection-end="702" vertical-scroll-proportion="0.6838843" vertical-offset="9" max-vertical-offset="544">
-          <folding />
-        </state>
+        <state line="20" column="1" selection-start="702" selection-end="702" vertical-scroll-proportion="0.6838843" vertical-offset="9" max-vertical-offset="544" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/login.css.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="124" column="0" selection-start="2468" selection-end="2468" vertical-scroll-proportion="0.75259876" vertical-offset="1746" max-vertical-offset="2227">
-          <folding />
-        </state>
+        <state line="124" column="0" selection-start="2468" selection-end="2468" vertical-scroll-proportion="0.75259876" vertical-offset="1746" max-vertical-offset="2227" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/_errors.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="11" selection-start="76" selection-end="76" vertical-scroll-proportion="0.10602911" vertical-offset="0" max-vertical-offset="481">
-          <folding />
-        </state>
+        <state line="3" column="11" selection-start="76" selection-end="76" vertical-scroll-proportion="0.10602911" vertical-offset="0" max-vertical-offset="481" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/login/new.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="62" selection-start="245" selection-end="245" vertical-scroll-proportion="0.21205822" vertical-offset="0" max-vertical-offset="663">
-          <folding />
-        </state>
+        <state line="6" column="62" selection-start="245" selection-end="245" vertical-scroll-proportion="0.21205822" vertical-offset="0" max-vertical-offset="663" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/_show_message.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="37" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.5368421" vertical-offset="0" max-vertical-offset="855">
-          <folding />
-        </state>
+        <state line="27" column="37" selection-start="1291" selection-end="1291" vertical-scroll-proportion="0.5368421" vertical-offset="0" max-vertical-offset="855" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/show_message.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="21" selection-start="46" selection-end="46" vertical-scroll-proportion="0.01988304" vertical-offset="0" max-vertical-offset="855">
-          <folding />
-        </state>
+        <state line="1" column="21" selection-start="46" selection-end="46" vertical-scroll-proportion="0.01988304" vertical-offset="0" max-vertical-offset="855" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/send_message.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.03976608" vertical-offset="0" max-vertical-offset="855">
-          <folding />
-        </state>
+        <state line="2" column="0" selection-start="138" selection-end="138" vertical-scroll-proportion="0.03976608" vertical-offset="0" max-vertical-offset="855" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/like_post.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="156" selection-end="156" vertical-scroll-proportion="0.05964912" vertical-offset="0" max-vertical-offset="855">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="156" selection-end="156" vertical-scroll-proportion="0.05964912" vertical-offset="0" max-vertical-offset="855" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/answer_request.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="121" selection-end="121" vertical-scroll-proportion="0.07953216" vertical-offset="0" max-vertical-offset="855">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="121" selection-end="121" vertical-scroll-proportion="0.07953216" vertical-offset="0" max-vertical-offset="855" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/add_comment.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="56" selection-start="0" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855">
-          <folding />
-        </state>
+        <state line="0" column="56" selection-start="0" selection-end="113" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="855" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/profile.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="124" selection-start="3195" selection-end="3195" vertical-scroll-proportion="84.46154" vertical-offset="3624" max-vertical-offset="4522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="39" selection-start="516" selection-end="516" vertical-scroll-proportion="0.3469388" vertical-offset="0" max-vertical-offset="782">
+        <state line="84" column="124" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.0" vertical-offset="3624" max-vertical-offset="4522">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/delete_comment.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="0" selection-end="121" vertical-scroll-proportion="0.12615955" vertical-offset="0" max-vertical-offset="539">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="0" selection-end="121" vertical-scroll-proportion="0.12615955" vertical-offset="0" max-vertical-offset="539" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/_right.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="132" column="28" selection-start="6421" selection-end="6421" vertical-scroll-proportion="-15.076923" vertical-offset="1852" max-vertical-offset="3179">
-          <folding>
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#2;n#div#1;n#div#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#0;n#div#0;n#div#0;n#div#3;n#!!top" expanded="true" />
-          </folding>
+        <state line="132" column="28" selection-start="6421" selection-end="6421" vertical-scroll-proportion="0.0" vertical-offset="2244" max-vertical-offset="3179">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1095,21 +907,118 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/delete_notif.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="125" selection-end="125" vertical-scroll-proportion="0.07068607" vertical-offset="0" max-vertical-offset="481">
-          <folding />
-        </state>
+        <state line="2" column="17" selection-start="125" selection-end="125" vertical-scroll-proportion="0.07068607" vertical-offset="0" max-vertical-offset="481" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/delete_event.js.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="125" selection-end="125" vertical-scroll-proportion="0.07068607" vertical-offset="0" max-vertical-offset="481">
+        <state line="2" column="17" selection-start="125" selection-end="125" vertical-scroll-proportion="0.07068607" vertical-offset="0" max-vertical-offset="481" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="563" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.ru">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="563" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/routes.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="8" selection-start="310" selection-end="310" vertical-scroll-proportion="0.31748727" vertical-offset="0" max-vertical-offset="1666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/facebook.css.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="94" column="22" selection-start="1378" selection-end="1378" vertical-scroll-proportion="0.0" vertical-offset="1184" max-vertical-offset="4641">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="8" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="901">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile.lock">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2261">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="39" selection-start="516" selection-end="516" vertical-scroll-proportion="0.23155504" vertical-offset="0" max-vertical-offset="881">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20140412130229_create_users.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="22" selection-start="246" selection-end="246" vertical-scroll-proportion="0.17832167" vertical-offset="0" max-vertical-offset="858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/db/schema.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environment.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="881">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="390" selection-end="390" vertical-scroll-proportion="0.13869464" vertical-offset="0" max-vertical-offset="858">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/application.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="19" selection-start="66" selection-end="66" vertical-scroll-proportion="0.03859251" vertical-offset="0" max-vertical-offset="881">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/environments/production.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="30" selection-start="1271" selection-end="1271" vertical-scroll-proportion="0.5610236" vertical-offset="208" max-vertical-offset="1462">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/facebook/_left.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="33" selection-start="2208" selection-end="2208" vertical-scroll-proportion="0.18711019" vertical-offset="794" max-vertical-offset="3315">
+        <state line="52" column="33" selection-start="2208" selection-end="2208" vertical-scroll-proportion="-7.8461537" vertical-offset="680" max-vertical-offset="3315">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="17799">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/database.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="17" selection-start="620" selection-end="620" vertical-scroll-proportion="0.48350397" vertical-offset="0" max-vertical-offset="879">
           <folding />
         </state>
       </provider>

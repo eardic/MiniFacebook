@@ -3,20 +3,26 @@
   <component name="DataSourceManagerImpl" format="xml" hash="2100363335">
     <data-source source="LOCAL" name="Rails MiniFacebook: development" uuid="15b2dc1b-4a80-4b8e-9367-bf9e5e7e5230">
       <driver-ref>sqlite.xerial</driver-ref>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\RubymineProjects\MiniFacebook\db\development.sqlite3</jdbc-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/db/facelook_development</jdbc-url>
+      <user-name>facelook</user-name>
+      <user-password>df9bdf9fdf93df9ddf9fdf99</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails MiniFacebook: test" uuid="bd5d1043-a212-4839-9b1a-63cb182cbf71">
       <driver-ref>sqlite.xerial</driver-ref>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\RubymineProjects\MiniFacebook\db\test.sqlite3</jdbc-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/db/facelook_test</jdbc-url>
+      <user-name>facelook</user-name>
+      <user-password>df9bdf9fdf93df9ddf9fdf99</user-password>
       <libraries />
     </data-source>
     <data-source source="LOCAL" name="Rails MiniFacebook: production" uuid="59ae0372-2547-4b38-9792-223b3334a104">
       <driver-ref>sqlite.xerial</driver-ref>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\RubymineProjects\MiniFacebook\db\production.sqlite3</jdbc-url>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1:5432/db/facelook_production</jdbc-url>
+      <user-name>facelook</user-name>
+      <user-password>df9bdf9fdf93df9ddf9fdf99</user-password>
       <libraries />
     </data-source>
   </component>
