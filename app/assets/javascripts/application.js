@@ -15,6 +15,3 @@
 //= require turbolinks
 //= require cloudinary
 //= require_tree .
-
-
-

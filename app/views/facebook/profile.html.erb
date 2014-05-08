@@ -234,6 +234,45 @@
   </div>
 </div>
 
+<script>
+    $(document).ready(function () {
+        // Cloudinary jQuery integration library uses jQuery File Upload widget
+        // (see http://blueimp.github.io/jQuery-File-Upload/).
+        // Any file input field with cloudinary-fileupload class is automatically
+        // wrapped using the File Upload widget and configured for Cloudinary uploads.
+        // You can further customize the configuration using .fileupload method
+        // as we do below.
+        $(".cloudinary-fileupload")
+                .fileupload({
+                    // Uncomment the following lines to enable client side image resizing and valiation.
+                    // Make sure cloudinary/processing is included the js file
+                    //disableImageResize: false,
+                    imageMaxWidth: 512,
+                    imageMaxHeight: 512,
+                    acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp|ico)$/i,
+                    maxFileSize: 2000000, // 2MB
+                    dropZone: "#direct_upload",
+                    start: function (e) {
+                        $(".status").text("Starting upload...");
+                    },
+                    progress: function (e, data) {
+                        $(".status").text("Uploading... " + Math.round((data.loaded * 100.0) / data.total) + "%");
+                    },
+                    fail: function (e, data) {
+                        $(".status").text("Upload failed");
+                    }
+                })
+                .off("cloudinarydone").on("cloudinarydone", function (e, data) {
+                    $(".status").text("");
+                    $(".preview").html(
+                            $.cloudinary.image(data.result.public_id, {
+                                format: data.result.format, width: 128, height: 128, crop: "fit"
+                            })
+                    );
+                });
+    });
+</script>
+
 <!-- CHANGE PROFILE DIALOG -->
 <div id="editAvatarModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
@@ -244,9 +283,14 @@
       </div>
       <div class="modal-body">
         <div class="col-md-12">
-          <%= form_tag({:action => 'upload_photo', :controller => 'profile'}, :method => :post, :style => 'display:flex') do %>
-              <%= cl_image_upload_tag(:image_id) %>
-              <%= submit_tag "Save" %>
+          <%= form_tag({:action => 'upload_photo', :controller => 'profile'}, :method => :post) do %>
+              <div class="preview"></div>
+              <%= cl_image_upload_tag(:image_id, :html => {:style => "margin: 10px 0px 10px 0px"}) %>
+              <div id="direct_upload">
+                <p>You can also drag and drop an image file into the area.</p>
+              </div>
+              <div class="status"></div>
+              <%= submit_tag "Save", :class => 'btn btn-default' %>
           <% end %>
         </div>
       </div>
