@@ -243,14 +243,14 @@
         // You can further customize the configuration using .fileupload method
         // as we do below.
         $(".cloudinary-fileupload")
-                .fileupload({
+                .cloudinary_fileupload({
                     // Uncomment the following lines to enable client side image resizing and valiation.
                     // Make sure cloudinary/processing is included the js file
                     //disableImageResize: false,
-                    imageMaxWidth: 512,
-                    imageMaxHeight: 512,
-                    acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp|ico)$/i,
-                    maxFileSize: 2000000, // 2MB
+                    // imageMaxWidth: 512,
+                    //imageMaxHeight: 512,
+                    //acceptFileTypes: /(\.|\/)(gif|jpe?g|png|bmp|ico)$/i,
+                    //maxFileSize: 2000000, // 2MB
                     dropZone: "#direct_upload",
                     start: function (e) {
                         $(".status").text("Starting upload...");
@@ -263,7 +263,7 @@
                     }
                 })
                 .off("cloudinarydone").on("cloudinarydone", function (e, data) {
-                    $(".status").text("");
+                    $(".status").text("Upload success");
                     $(".preview").html(
                             $.cloudinary.image(data.result.public_id, {
                                 format: data.result.format, width: 128, height: 128, crop: "fit"
