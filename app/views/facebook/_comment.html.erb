@@ -10,10 +10,13 @@
             <% end %>
           </div>
           <div class="col-md-11" style="padding-left: 5px">
-            <%= link_to "×", facebook_delete_comment_path(:comment_id => c.id), :remote => true, :class => 'close',
-                        :style => 'width:12px;margin:0px;font-size:16px;font-weight:normal', :method => 'delete' %>
+            <% if c.user_id == get_user_id() %>
+                <%= link_to "×", facebook_delete_comment_path(:comment_id => c.id), :remote => true, :class => 'close',
+                            :style => 'width:12px;margin:0px;font-size:16px;font-weight:normal', :method => 'delete' %>
+            <% end %>
             <%= link_to "#{member.name} #{member.last_name}", facebook_friend_profile_path(:friend_id => member.id), :id => 'post_user_name' %>
-            <p id="post_elapsed_time" style="margin-top: 2px;margin-bottom: 5px">&nbsp;<%= time_ago_in_words(c.created_at) %> ago</p>
+            <p id="post_elapsed_time" style="margin-top: 2px;margin-bottom: 5px">&nbsp;<%= time_ago_in_words(c.created_at) %>
+              ago</p>
             <p style="overflow-wrap: break-word;font-size: 12px"><%= c.text %></p>
           </div>
         </div>

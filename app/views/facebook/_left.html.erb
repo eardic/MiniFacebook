@@ -49,7 +49,7 @@
     <div class="panel-body">
       <ul class="list-unstyled">
         <% if @user && !@user.notifications.empty? %>
-            <% @user.notifications.each do |n| %>
+            <% @user.notifications.take(3).each do |n| %>
                 <li id="notif_pre_id_<%= n.id %>" style="margin-top: 3px">
                   <div class="row clearfix">
                     <% friend = get_user(n.friend_id) %>

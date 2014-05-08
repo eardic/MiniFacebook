@@ -90,7 +90,9 @@
   <!-- MIDDLE COLUMN -->
   <div class="col-md-6 col-sm-6">
 
-    <%= render partial: "post_form", locals: {is_home: false} %>
+    <% if is_user %>
+        <%= render partial: "post_form", locals: {is_home: false} %>
+    <% end %>
 
     <div id="post_container">
       <!-- All post of user will be shown -->
@@ -112,7 +114,8 @@
       </div>
       <div class="panel-body">
         <% if user && !user.friends.empty? %>
-            <% get_friends.take(3).each do |f| %>
+            <% user.friends.take(3).each do |friends| %>
+                <% f = get_user(friends.friend_id) %>
                 <div class="row" style="margin-top: 5px">
                   <div class="col-sm-4 src-res-img">
                     <% if f.img_id %>

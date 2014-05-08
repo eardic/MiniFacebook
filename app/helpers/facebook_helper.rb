@@ -3,6 +3,11 @@ module FacebookHelper
     User.get_friends(session[:user_id])
   end
 
+  # for comment partial view, to check whether a comment belongs to user or not
+  def get_user_id
+    session[:user_id]
+  end
+
   def get_user(id)
     User.find(id)
   end

@@ -10,8 +10,10 @@
     <% friend = get_user(p.user_id) %>
     <div class="panel panel-default" id="post_div_<%= p.id %>">
       <div class="panel-heading">
-        <%= link_to "×", facebook_delete_post_path(:post_id => p.id), :remote => true, :class => 'close',
-                    :style => 'width:12px;margin-top:5px;font-size:16px', :method => 'delete', :id => "post_delete_btn_#{p.id}" %>
+        <% if p.user_id == user.id %>
+            <%= link_to "×", facebook_delete_post_path(:post_id => p.id), :remote => true, :class => 'close',
+                        :style => 'width:12px;margin-top:5px;font-size:16px', :method => 'delete', :id => "post_delete_btn_#{p.id}" %>
+        <% end %>
         <div class="row" style="margin-top: 5px">
           <div class="col-sm-1">
             <% if friend.img_id %>
@@ -21,7 +23,11 @@
             <% end %>
           </div>
           <div class="col-sm-3">
-            <%= link_to "#{friend.name} #{friend.last_name}", facebook_profile_path, :id => 'post_user_name' %>
+            <% if p.user_id != user.id %>
+                <%= link_to "#{friend.name} #{friend.last_name}", facebook_friend_profile_path(:friend_id => friend.id), :id => 'post_user_name' %>
+            <% else %>
+                <%= link_to "#{friend.name} #{friend.last_name}", facebook_profile_path, :id => 'post_user_name' %>
+            <% end %>
             <br>
             <p id="post_elapsed_time"><%= time_ago_in_words(p.created_at) %> ago</p>
           </div>
@@ -49,7 +55,7 @@
         </div>
         <div class="input-group-btn">
           <%= form_tag(facebook_add_comment_path(:post_id => p.id), :method => 'post', :remote => true) do %>
-              <%= text_field_tag :comment, nil, :placeholder => "Add Comment...", :class => 'form-control' %>
+              <%= text_field_tag "comment_#{p.id}", nil, :placeholder => "Add Comment...", :class => 'form-control' %>
           <% end %>
         </div>
       </div>

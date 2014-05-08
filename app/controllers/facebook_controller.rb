@@ -144,7 +144,7 @@ class FacebookController < ApplicationController
 
   def add_comment
     p_id = params[:post_id]
-    comment = params[:comment]
+    comment = params["comment_#{p_id}"]
     if p_id && comment
       @user = User.find(session[:user_id])
       @post = Post.find(p_id)

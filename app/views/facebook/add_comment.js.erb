@@ -1,1 +1,2 @@
 $("#comments_div_<%= @post.id %>").html("<%= j render(:partial => 'comment', :locals => { :post => @post }) %>");
+$("#comment_<%= @post.id %>").val("");// Clear comment text input area
