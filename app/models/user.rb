@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   has_many :notifications, dependent: :destroy
   has_many :events, dependent: :destroy
 
+  has_one :settings, dependent: :destroy
   has_one :job, dependent: :destroy
   has_one :education, dependent: :destroy
   has_one :relationship, dependent: :destroy

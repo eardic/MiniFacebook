@@ -219,7 +219,7 @@
                     <% get_friends.each do |f| %>
                         <tr>
                           <td><%= f.name %>&nbsp;<%= f.last_name %></td>
-                          <td><%= check_box_tag "friend_ids[#{f.id}]", f.id, :name => "friend_ids[]" %></td>
+                          <td><%= check_box_tag "friend_ids[#{f.id}]", f.id, false, :name => "friend_ids[]" %></td>
                         </tr>
                     <% end %>
                   </table>

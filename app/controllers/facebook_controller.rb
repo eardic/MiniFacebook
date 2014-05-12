@@ -85,7 +85,7 @@ class FacebookController < ApplicationController
     @user = User.find(session[:user_id])
     @friends = User.search(params[:src_term])
     @user.friends.each do |u|
-      @friends.select { |f| f.id == @user.id }.each do |d|
+      @friends.select { |f| f.id == @user.id || (!f.settings.nil? && f.settings.src_hide == true) }.each do |d|
         @friends.delete(d)
       end
     end
@@ -190,6 +190,14 @@ class FacebookController < ApplicationController
     @event = Event.find(params[:event_id])
     @event.destroy
     render "delete_event.js"
+  end
+
+  def save_settings
+    src_hid = params[:src_hide] == "true"
+    user = User.find(session[:user_id])
+    user.settings = Settings.new(src_hide: src_hid)
+    user.save
+    render :nothing => true
   end
 
   def log_out

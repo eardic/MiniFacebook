@@ -18,6 +18,7 @@ MiniFacebook::Application.routes.draw do
   post "facebook/like_post"
   post "facebook/dislike_post"
   post "facebook/add_comment"
+  post "facebook/save_settings"
   post "facebook/share_post"
   delete "facebook/delete_comment"
 

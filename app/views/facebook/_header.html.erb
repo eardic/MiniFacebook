@@ -88,8 +88,19 @@
         <h2 class="text-center">Change Settings</h2>
       </div>
       <div class="modal-body">
-        <div class="col-md-12 text-center">
-
+        <div class="col-md-12">
+          <%= form_tag(url_for(action: 'save_settings', controller: 'facebook'), :method => :post, :remote => true) do %>
+              <table class="table">
+                <tr>
+                  <td><%= label_tag "Search" %></td>
+                </tr>
+                <tr>
+                  <td><%= content_tag :p, "Do you want to be hidden in searches ?" %></td>
+                  <td><%= check_box_tag :src_hide, true, false, :class => 'checkbox', :style => 'margin:auto' %></td>
+                </tr>
+              </table>
+              <%= button_tag "Save", :class => 'btn' %>
+          <% end %>
         </div>
       </div>
     </div>
