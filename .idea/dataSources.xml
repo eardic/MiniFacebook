@@ -5,7 +5,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/db/facelook_development</jdbc-url>
-      <user-name>facelook</user-name>
+      <user-name>postgres</user-name>
       <user-password>df9bdf9fdf93df9ddf9fdf99</user-password>
       <libraries />
     </data-source>
@@ -13,7 +13,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/db/facelook_test</jdbc-url>
-      <user-name>facelook</user-name>
+      <user-name>postgres</user-name>
       <user-password>df9bdf9fdf93df9ddf9fdf99</user-password>
       <libraries />
     </data-source>
@@ -21,7 +21,7 @@
       <driver-ref>sqlite.xerial</driver-ref>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://127.0.0.1:5432/db/facelook_production</jdbc-url>
-      <user-name>facelook</user-name>
+      <user-name>postgres</user-name>
       <user-password>df9bdf9fdf93df9ddf9fdf99</user-password>
       <libraries />
     </data-source>

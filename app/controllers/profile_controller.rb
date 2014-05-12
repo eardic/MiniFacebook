@@ -4,10 +4,10 @@ class ProfileController < ApplicationController
     @user = User.find(session[:user_id])
     if @user.update_attributes(user_params)
       flash[:notice] = 'The user was saved successfully.'
-      puts "SUCCESSS"
+      puts "Success"
     else
-      flash[:notice] = 'The usercould not be saved.'
-      puts "FAILLLLL"
+      flash[:notice] = 'The user could not be saved.'
+      puts "Fail"
     end
     redirect_to facebook_profile_path
   end
@@ -41,7 +41,7 @@ class ProfileController < ApplicationController
   def upload_photo
     if params[:image_id].present?
       preloaded = Cloudinary::PreloadedFile.new(params[:image_id])
-      puts "Invalid upload signature" if !preloaded.valid?
+      puts 'Invalid upload signature' if !preloaded.valid?
       @user = User.find(session[:user_id])
       @user.img_id = preloaded.identifier
       if @user.save
