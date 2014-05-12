@@ -66,11 +66,14 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true" style="width:12px;">×</button>
         <h2 class="text-center">About</h2>
       </div>
+      <h4 class="text-center">Developers</h4>
       <div class="modal-body">
-        <div class="col-md-12 text-center">
-          <p class="notice">Emre Ardıç</p>
-          <p class="notice">Azat Uğurlu</p>
+        <div class="col-md-12 text-right">
+          <p class="notice"><%= link_to image_tag("emre.jpg", :border => 0, :size => '75x75', :alt => '', :title => ''), "https://plus.google.com/+EmreArd%C4%B1%C3%A7/posts/hyZiG5wHpbX", :class => '' %> Emre Ardıç</p></br></br></br>
         </div>
+        <div class="col-md-12 text-left">
+          <p class="notice"><%= link_to image_tag("azat.jpg", :border => 0, :size => '75x75', :alt => '', :title => ''), "http://www.azatugurlu.com", :class => '' %>Azat Uğurlu</p>
+      </div>
       </div>
       <div class="modal-footer">
         <button class="btn" data-dismiss="modal" aria-hidden="true">OK</button>
