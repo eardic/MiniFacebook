@@ -69,10 +69,14 @@ class ProfileController < ApplicationController
   def delete_friend
     if params[:friend_ids]
       selected_ids = params[:friend_ids]
+      user_id = session[:user_id]
       if selected_ids
-        @user = User.find(session[:user_id])
+        @user = User.find(user_id)
         selected_ids.each do |id|
+          # Delete from both friend and user of list of friends
           @user.friends.find_by_friend_id(id).destroy
+          friend = User.find(id)
+          friend.friends.find_by_friend_id(user_id).destroy
         end
       end
     end
