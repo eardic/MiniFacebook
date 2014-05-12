@@ -8,21 +8,23 @@
       <ul class="list-unstyled">
         <% if @user && !@user.requests.empty? %>
             <% @user.requests.reverse.take(3).each do |r| %>
-                <li id="request_pre_id_<%= r.id %>" style="margin-top: 3px">
-                  <div class="row clearfix">
-                    <% friend = get_user(r.from_user_id) %>
-                    <div class="col-sm-4 src-res-img">
-                      <% if friend.img_id %>
-                          <%= cl_image_tag friend.img_id, :width => 50, :height => 50, :class => 'center-block' %>
-                      <% else %>
-                          <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
-                      <% end %>
-                    </div>
-                    <div class="col-sm-6 src-res-group">
-                      <p class="src-res-name"><%= "#{friend.name} #{friend.last_name}" %></p>
-                    </div>
-                  </div>
-                </li>
+                <% friend = get_user(r.from_user_id) %>
+                <% if !friend.nil? %>
+                    <li id="request_pre_id_<%= r.id %>" style="margin-top: 3px">
+                      <div class="row clearfix">
+                        <div class="col-sm-4 src-res-img">
+                          <% if friend.img_id %>
+                              <%= cl_image_tag friend.img_id, :width => 50, :height => 50, :class => 'center-block' %>
+                          <% else %>
+                              <%= image_tag('avatar.png', size: '50x50', class: 'center-block') %>
+                          <% end %>
+                        </div>
+                        <div class="col-sm-6 src-res-group">
+                          <p class="src-res-name"><%= "#{friend.name} #{friend.last_name}" %></p>
+                        </div>
+                      </div>
+                    </li>
+                <% end %>
             <% end %>
         <% else %>
             <p class="text-center text-info">No Requests</p>

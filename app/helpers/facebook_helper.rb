@@ -10,6 +10,8 @@ module FacebookHelper
 
   def get_user(id)
     User.find(id)
+  rescue ActiveRecord::RecordNotFound
+    null
   end
 
   def create_notif_text(type)
