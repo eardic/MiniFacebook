@@ -1,5 +1,7 @@
 class ProfileController < ApplicationController
 
+  before_filter :authenticate_user
+
   def update_basic
     @user = User.find(session[:user_id])
     if @user.update_attributes(user_params)

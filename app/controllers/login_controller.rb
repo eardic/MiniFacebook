@@ -1,7 +1,7 @@
 class LoginController < ApplicationController
 
-  before_filter :authenticate_user, :except => [:index, :create, :login_try, :welcome, :new]
-  before_filter :save_login_state, :only => [:new, :create, :index, :login_try, :welcome]
+  before_filter :authenticate_user, :except => [:index, :create, :login_try, :new]
+  before_filter :save_login_state, :only => [:new, :create, :index, :login_try]
 
   #Sing Up Form
   def new

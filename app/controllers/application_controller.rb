@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   protected
   def authenticate_user
-    unless session[:user_id]
+    id = session[:user_id]
+    if id.nil? || User.where(id: id).empty?
       redirect_to login_index_path
       return false
     else
@@ -15,7 +16,8 @@ class ApplicationController < ActionController::Base
 
   #This method for prevent user to access Signup & Login Page without logout
   def save_login_state
-    if session[:user_id]
+    id = session[:user_id]
+    if id && !User.where(id: id).empty?
       redirect_to facebook_home_path
       return false
     else

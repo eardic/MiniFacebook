@@ -1,6 +1,6 @@
 class FacebookController < ApplicationController
   respond_to :html, :js
-  before_filter :authenticate_user, :except => [:home, :profile, :find_friends]
+  before_filter :authenticate_user
   @@clicked_friend_id = nil # for messaging system, messages will be sent to selected user in inbox list
 
   def home
