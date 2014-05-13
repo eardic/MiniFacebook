@@ -84,11 +84,11 @@ class FacebookController < ApplicationController
   def find_friends
     @user = User.find(session[:user_id])
     @friends = User.search(params[:src_term])
-    @user.friends.each do |u|
+
       @friends.select { |f| f.id == @user.id || (!f.settings.nil? && f.settings.src_hide == true) }.each do |d|
         @friends.delete(d)
       end
-    end
+
   end
 
   def profile
